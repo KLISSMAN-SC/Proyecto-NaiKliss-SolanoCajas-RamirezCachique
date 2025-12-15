@@ -1,0 +1,31 @@
+@charset "UTF-8";
+.label-light {
+        font-weight: 600;
+        color: #2d2d2d;
+        margin-bottom: 6px;
+    }
+
+    .input-light, .select-light {
+        height: 45px;
+        border-radius: 6px;
+        border: 1px solid #c9c9c9;
+        background-color: #ffffff;
+        color: #000;
+        padding-left: 12px;
+    }
+
+    .input-light::placeholder {
+        color: #8a8a8a;
+    }
+
+    h5, h4 {
+        color: #1a1a1a;
+        font-weight: 700;
+    }
+    .info-container {
+	    padding: 15px;
+	    border: 2px solid #444;
+	    border-radius: 10px;
+	    background: #ffffff;
+	    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+	}

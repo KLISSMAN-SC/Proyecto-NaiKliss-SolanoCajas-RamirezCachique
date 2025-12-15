@@ -1,0 +1,123 @@
+@charset "UTF-8";
+body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #1a1a1a;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+        	width: 810px;
+            height: 460px;
+            /*width: 900px;*/
+            /*height: 520px;*/
+            background: linear-gradient(135deg, #b5422f 40%, #000 40%);
+            border-radius: 12px;
+            display: flex;
+            box-shadow: 0 0 25px rgba(0,0,0,0.5);
+        }
+
+        /* TEXTO IZQUIERDA */
+        .left {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            transform: translateY(40px);
+            padding-left: 60px;
+            color: white;
+        }
+
+        .left h1 {
+            margin-bottom: 10px;
+            
+        }
+
+        .left p {
+            font-size: 15px;
+            opacity: 0.9;
+            
+        }
+		
+		
+        /* FORMULARIO DERECHA */
+        .right {
+            width: 50%;
+            padding: 40px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            margin-top: -40px;
+        }
+
+        .right h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .right label {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .right input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: none;
+            background: #2b2b2b;
+            color: white;
+        }
+
+        .btn-register {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            background: linear-gradient(45deg, #ff4500, #cc3300);
+            color: white;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .login {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .login a {
+            color: #ff4500;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .error {
+            color: #ff4d4d;
+            font-size: 13px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+        .row2 {
+		    display: flex;
+		    gap: 35px;
+		    width: 100%;
+		}
+		
+		.col {
+		    width: 50%;
+		    display: flex;
+		    flex-direction: column;
+		}
+        .error {
+		    color: #ff4d4d;
+		    font-size: 13px;
+		    margin-top: -10px;
+		    margin-bottom: 10px;
+		}

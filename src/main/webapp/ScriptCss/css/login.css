@@ -1,0 +1,94 @@
+@charset "UTF-8";
+body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #1a1a1a;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 810px;
+            height: 460px;
+            background: linear-gradient(50deg, #000 60%, #b5422f 40%);
+            border-radius: 12px;
+            display: flex;
+            box-shadow: 0 0 25px rgba(0,0,0,0.5);
+        }
+
+        .left {
+            width: 50%;
+            padding: 40px;
+            color: white;
+        }
+
+        .left h2 {
+            margin-bottom: 20px;
+        }
+
+        .left label {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .left input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: none;
+            background: #2b2b2b;
+            color: white;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            background: linear-gradient(45deg, #ff4500, #cc3300);
+            color: white;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .left .signup {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .left .signup a {
+            color: #ff4500;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .right {
+            width: 50%;
+            display: flex;
+            color: white;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            padding-left: 100px;
+    		padding-right: 40px;
+        }
+		
+		.right div {
+   			margin-top: -160px; /* valor negativo = subir */
+		}
+		
+        .right h1 {
+            margin-bottom: 10px;
+        }
+        .error {
+		    color: #ff4d4d;
+		    font-size: 13px;
+		    margin-top: -10px;
+		    margin-bottom: 10px;
+		}
