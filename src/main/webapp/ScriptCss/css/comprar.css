@@ -29,3 +29,94 @@
 	    background: #ffffff;
 	    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
 	}
+	
+	/* ====== BILLETERA ====== */
+
+.billetera-container {
+    background-color: #f8f9fa;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: inset 0 0 0 1px #dee2e6;
+}
+
+.btn-pago-billetera {
+    background-color: #198754;
+    color: #fff;
+    font-weight: 700;
+    padding: 12px 28px;
+    border-radius: 14px;
+    font-size: 1.05rem;
+}
+
+.btn-pago-billetera:hover {
+    background-color: #157347;
+    color: #fff;
+}
+
+/* ====== TARJETA ====== */
+
+.tarjeta-form {
+    background-color: #ffffff;
+    border-radius: 18px;
+    padding: 25px;
+}
+
+.bloque-form {
+    border: 1px solid #dee2e6;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.bloque-title {
+    font-weight: 700;
+    color: #161917;
+    margin-bottom: 15px;
+}
+
+/* TARJETA GUARDADA */
+.tarjeta-visual {
+    background: linear-gradient(135deg, #161917, #9E0004);
+    color: #fff;
+    border-radius: 18px;
+    padding: 20px;
+    max-width: 420px;
+}
+
+.tarjeta-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+}
+
+.estado-ok {
+    background-color: #198754;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+}
+
+.tarjeta-numero {
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+    margin: 18px 0;
+}
+
+.tarjeta-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+}
+
+/* BOTÓN */
+.btn-pago-tarjeta {
+    background-color: #9E0004;
+    color: #E1E3DB;
+    font-weight: 700;
+    padding: 12px 28px;
+    border-radius: 14px;
+}
+
+.btn-pago-tarjeta:hover {
+    background-color: #B9030F;
+    color: #fff;
+}

@@ -4,62 +4,145 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
-	String url = (String) request.getContextPath()+ "/";
-	double saldo = (double) session.getAttribute("saldo");
+    String url = (String) request.getContextPath()+ "/";
+    double saldo = (double) session.getAttribute("saldo");
 %>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Carrito</title>
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
-    /* Contenedor centrado como en el dibujo */
-    .carrito-container {
-        width: 80%;
-        margin: 40px auto;
-        padding: 25px;
-        border: 2px solid #000;
-        border-radius: 10px;
-        background: #f8f9fa;
+    body {
+        background-color: #E1E3DB;
     }
 
-    /* Tabla con scroll */
+    /* CONTENEDOR */
+    .carrito-container {
+        width: 85%;
+        margin: 40px auto;
+        padding: 30px;
+        border-radius: 18px;
+        background: #ffffff;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+
+    /* HEADER */
+    .carrito-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+
+    .carrito-title {
+        color: #9E0004;
+        font-weight: 800;
+    }
+
+    /* SALDO */
+    .saldo-btn {
+        background-color: #ffc107;
+        font-weight: 700;
+        border-radius: 12px;
+        padding: 8px 16px;
+    }
+
+    /* TABLA */
     .tabla-scroll {
-        max-height: 250px;
+        max-height: 300px;
         overflow-y: auto;
+        border-radius: 14px;
+        box-shadow: inset 0 0 0 1px #dee2e6;
     }
 
     thead th {
         position: sticky;
         top: 0;
-        background: #212529;
-        color: white;
-        z-index: 1;
+        background-color: #161917;
+        color: #E1E3DB;
+        z-index: 5;
+        text-align: center;
+    }
+
+    tbody tr:hover {
+        background-color: rgba(158, 0, 4, 0.08);
+    }
+
+    /* PRECIO */
+    .precio-gratis {
+        color: #9E0004;
+        font-weight: 700;
+    }
+
+    /* BOTÓN ELIMINAR */
+    .btn-eliminar {
+        background-color: #9E0004;
+        color: #E1E3DB;
+        font-weight: 600;
+        border-radius: 10px;
+        padding: 6px 14px;
+    }
+
+    .btn-eliminar:hover {
+        background-color: #B9030F;
+        color: #fff;
+    }
+
+    /* TOTALES */
+    .totales {
+        background-color: #f8f9fa;
+        border-radius: 14px;
+        padding: 15px 20px;
+        margin-top: 20px;
+        font-weight: 600;
+    }
+
+    /* BOTONES INFERIORES */
+    .btn-seguir {
+        background-color: #6c757d;
+        color: #fff;
+        font-weight: 600;
+        border-radius: 12px;
+    }
+
+    .btn-pago {
+        background-color: #198754;
+        color: #fff;
+        font-weight: 700;
+        border-radius: 12px;
+        padding: 10px 22px;
+    }
+
+    .btn-pago:hover {
+        background-color: #157347;
     }
 </style>
 </head>
 
 <body>
+
 <jsp:include page="/componente/Navbar.jsp" />
 
 <div class="carrito-container">
-    <h2 class="text-center mb-4">Carrito de Compras</h2>
 
-    <!-- BOTÓN Billetera -->
-    <div class="mb-3 text-end">
-        <a href="<%=url%>TiendaController?op=billetera"
-           class="btn btn-warning">
-            Saldo : <%=saldo %>
+    <!-- HEADER -->
+    <div class="carrito-header">
+        <h2 class="carrito-title">🛒 Carrito de Compras</h2>
+
+        <a href="<%=url%>TiendaController?op=billetera" class="saldo-btn btn">
+            Saldo: S/. <%=saldo %>
         </a>
     </div>
 
-    <!-- Tabla con scroll -->
+    <!-- TABLA -->
     <div class="tabla-scroll">
-        <table class="table table-striped table-bordered text-center align-middle">
-            <thead class="table-dark">
+        <table class="table table-bordered table-hover align-middle text-center mb-0">
+            <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>#</th>
                     <th>Nombre</th>
                     <th>Precio</th>
                     <th>Descripción</th>
@@ -74,59 +157,60 @@
                 List<VideoJuego> lista = (List<VideoJuego>) request.getAttribute("lista");
                 int totalJuegos = 0;
                 double precioTotal = 0;
-                int i=0;
+                int i = 0;
+
                 if (lista != null && !lista.isEmpty()) {
-                    for(VideoJuego videojuego : lista) {
-                    	i++;
-                    	totalJuegos ++;
-                    	precioTotal+=videojuego.getPrecio();
+                    for (VideoJuego videojuego : lista) {
+                        i++;
+                        totalJuegos++;
+                        precioTotal += videojuego.getPrecio();
                 %>
 
                 <tr>
                     <td><%=i%></td>
-                    <td><%=videojuego.getNombre()%></td>
+                    <td class="fw-bold"><%=videojuego.getNombre()%></td>
                     <td>
                         <% if (videojuego.getPrecio() != 0) { %>
                             S/. <%=videojuego.getPrecio()%>
                         <% } else { %>
-                            Gratis
+                            <span class="precio-gratis">Gratis</span>
                         <% } %>
                     </td>
                     <td><%=videojuego.getDescripcion()%></td>
                     <td><%=videojuego.getDesarrollador()%></td>
                     <td><%=videojuego.getCategoria()%></td>
                     <td>
-                        <a class="btn btn-primary btn-sm"
-                        href="<%=url%>TiendaController?op=eliminar&id=<%=videojuego.getIdVideoJuego()%>">
-                            eliminar
+                        <a class="btn btn-eliminar btn-sm"
+                           href="<%=url%>TiendaController?op=eliminar&id=<%=videojuego.getIdVideoJuego()%>">
+                            Eliminar
                         </a>
                     </td>
                 </tr>
 
                 <% } } else { %>
-                <tr><td colspan="8">Sin resultados</td></tr>
+                <tr>
+                    <td colspan="7" class="fw-bold">Sin resultados</td>
+                </tr>
                 <% } %>
             </tbody>
-
         </table>
     </div>
 
-    <!-- Totales -->
-    <div class="mt-3">
-        <p><strong>Total de juegos:</strong> <%=totalJuegos%></p>
-        <p><strong>Precio total:</strong> S/.<%=precioTotal%></p>
+    <!-- TOTALES -->
+    <div class="totales">
+        <p>Total de juegos: <strong><%=totalJuegos%></strong></p>
+        <p>Precio total: <strong>S/. <%=precioTotal%></strong></p>
     </div>
 
-    <!-- Botones inferiores -->
+    <!-- BOTONES -->
     <div class="d-flex justify-content-between mt-4">
-        <a href="<%=url%>TiendaController?op=listar"
-           class="btn btn-secondary">
-            Seguir Comprando
+        <a href="<%=url%>TiendaController?op=listar" class="btn btn-seguir">
+            ← Seguir Comprando
         </a>
 
         <a href="<%=url%>PagoController?op=formularioComprar&precio=<%=precioTotal %>"
-           class="btn btn-success">
-            CONTINUAR AL PAGO
+           class="btn btn-pago">
+            Continuar al Pago →
         </a>
     </div>
 
@@ -135,3 +219,4 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+

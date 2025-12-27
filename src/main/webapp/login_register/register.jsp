@@ -2,8 +2,9 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
-	String url = request.getContextPath() + "/";
+    String url = request.getContextPath() + "/";
 %>
+
 <html>
 <head>
 <meta charset="UTF-8">
@@ -12,64 +13,67 @@
 </head>
 
 <body>
-<div class="container">
 
-    <!-- TEXTO A LA IZQUIERDA -->
-    <div class="left">
-        <h1>CREAR CUENTA</h1>
-        <p>Únete a nosotros y disfruta de la experiencia.<br>
-           Completa tus datos para crear tu usuario.</p>
+<div class="register-wrapper">
+
+    <!-- INFO -->
+    <div class="info-panel">
+        <div>
+            <h1>CREAR CUENTA</h1>
+            <p>
+                Únete a nuestra comunidad y disfruta<br>
+                de todas las funcionalidades disponibles.
+            </p>
+        </div>
     </div>
 
-    <!-- FORMULARIO A LA DERECHA -->
-    <div class="right">
+    <!-- FORMULARIO -->
+    <div class="form-panel">
         <h2>Registrarse</h2>
 
         <form action="<%=url%>LoginController" method="POST">
-        	<input type="hidden" name="op" value="register">
+            <input type="hidden" name="op" value="register">
 
-		    <!-- FILA NOMBRE + APELLIDO -->
-		    <div class="row2">
-		        <div class="col">
-		            <label>Nombre</label>
-		            <input type="text" name="nombre" id="nombre" required>
-		        </div>
-		
-		        <div class="col">
-		            <label>Apellido</label>
-		            <input type="text" name="apellido" id="apellido" required>
-		        </div>
-		    </div>
-		
-		    <!-- USUARIO -->
-		    <label>Usuario</label>
-		    <input type="text" name="usuario" id="usuario" required>
-		
-		    <!-- EMAIL -->
-		    <label>Email</label>
-		    <input type="email" name="email" id="email" required>
-		
-		    <!-- FILA CONTRASEÑA + REPETIR -->
-		    <div class="row2">
-		        <div class="col">
-		            <label>Contraseña</label>
-		            <input type="password" name="password" id="password" required>
-		        </div>
-		
-		        <div class="col">
-		            <label>Repetir contraseña</label>
-		            <input type="password" name="confirmPassword" id="confirmPassword" required>
-		        </div>
-		    </div>
-		
-		    <div id="errorRegister" class="error">
-    			<%= request.getAttribute("error") != null ? request.getAttribute("error") : "" %>
+            <div class="row2">
+                <div class="col">
+                    <label>Nombre</label>
+                    <input type="text" name="nombre" id="nombre" required>
+                </div>
+
+                <div class="col">
+                    <label>Apellido</label>
+                    <input type="text" name="apellido" id="apellido" required>
+                </div>
+            </div>
+
+            <label>Usuario</label>
+            <div class="col1">
+            <input type="text" name="usuario" id="usuario" required>
 			</div>
-		
-		    <button type="submit" class="btn-register">Crear Cuenta</button>
-		
-		</form>
+            <label>Email</label>
+            <div class="col1">
+            <input type="email" name="email" id="email" required>
+			</div>
+            <div class="row2">
+                <div class="col">
+                    <label>Contraseña</label>
+                    <input type="password" name="password" id="password" required>
+                </div>
 
+                <div class="col">
+                    <label>Repetir contraseña</label>
+                    <input type="password" name="confirmPassword" id="confirmPassword" required>
+                </div>
+            </div>
+
+            <div id="errorRegister" class="error">
+                <%= request.getAttribute("error") != null ? request.getAttribute("error") : "" %>
+            </div>
+
+            <button type="submit" class="btn-register">
+                Crear Cuenta
+            </button>
+        </form>
 
         <div class="login">
             ¿Ya tienes cuenta?

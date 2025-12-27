@@ -1,186 +1,180 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-     <%@page import="Beans.*"%>
-     <%@page import="Model.*"%>
-     <%
-     String url = (String) request.getContextPath()+ "/"; 
-     double precioTotal = (double) request.getAttribute("precioTotal");
-    
-   	 Tarjeta tarjeta=(Tarjeta) request.getAttribute("tarjeta");
-	   
+<%@page import="Beans.*"%>
+<%@page import="Model.*"%>
+
+<%
+    String url = (String) request.getContextPath()+ "/"; 
+    double precioTotal = (double) request.getAttribute("precioTotal");
+    Tarjeta tarjeta = (Tarjeta) request.getAttribute("tarjeta");
 %>
-<form action="PagoController" method="post">
+
+<form action="PagoController" method="post" class="tarjeta-form">
 
     <input type="hidden" name="op" value="realizarCompraTarjeta">
     <input type="hidden" name="metodo" value="TARJETA">
     <input type="hidden" name="total" value="<%=precioTotal%>">
 
-<%
-    if (tarjeta != null) {
-%>
-    <!-- Tarjeta guardada -->
-<div class="row mb-4">
-    <div class="col-md-12">
+<% if (tarjeta != null) { %>
 
-        <div class="card shadow-sm border-0" style="max-width: 420px;">
-            <div class="card-body">
+    <!-- TARJETA GUARDADA -->
+    <div class="tarjeta-guardada mb-4">
 
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <span class="fw-bold text-success">
-                        <i class="bi bi-credit-card"></i> Tarjeta guardada
-                    </span>
-                    <span class="badge bg-success">Activa</span>
+        <div class="tarjeta-visual">
+            <div class="tarjeta-header">
+                <span>Tarjeta guardada</span>
+                <span class="estado-ok">ACTIVA</span>
+            </div>
+
+            <div class="tarjeta-numero">
+                **** **** **** <%= tarjeta.getUltimos4() %>
+            </div>
+
+            <div class="tarjeta-footer">
+                <div>
+                    <small>Titular</small>
+                    <div><%= tarjeta.getTitular() %></div>
                 </div>
-
-                <div class="mb-2 text-muted" style="letter-spacing: 2px; font-size: 1.1rem;">
-                    **** **** **** <%= tarjeta.getUltimos4() %>
+                <div>
+                    <small>Vence</small>
+                    <div><%= tarjeta.getFechaVencimiento() %></div>
                 </div>
-
-                <div class="row">
-                    <div class="col-7">
-                        <small class="text-muted">Titular</small>
-                        <div class="fw-semibold">
-                            <%= tarjeta.getTitular() %>
-                        </div>
-                    </div>
-
-                    <div class="col-5 text-end">
-                        <small class="text-muted">Vence</small>
-                        <div class="fw-semibold">
-                            <%= tarjeta.getFechaVencimiento() %>
-                        </div>
-                    </div>
-                </div>
-
-                <input type="hidden" name="usarTarjetaGuardada" value="true">
-
             </div>
         </div>
 
-    </div>
-</div>
-<%
-    } else {
-%>
-<div class="row mb-4">
-    <div class="col-md-6">
-        <label class="label-light">Número de tarjeta</label>
-        
-        <input 
-    	id="numeroTarjeta"
-    	name="numeroTarjeta"
-    	type="text"
-    	class="form-control input-light"
-    	onkeydown="soloNumeros(event)"
-   		placeholder="XXXX XXXX XXXX XXXX"
-    	maxlength="19"
-    	oninput="formatearTarjeta(this)">
+        <input type="hidden" name="usarTarjetaGuardada" value="true">
+
     </div>
 
-    <div class="col-md-3">
-        <label class="label-light">Fecha de caducidad</label>
-        <div class="d-flex gap-2">
-            <select name="mes" class="form-select select-light">
-                <option>--</option>
-                <% for(int i=1;i<=12;i++){ %>
-                    <option><%=i%></option>
-                <% } %>
-            </select>
+<% } else { %>
 
-            <select name="anio" class="form-select select-light">
-                <option>----</option>
-                <% for(int i=2025;i<=2050;i++){ %>
-                    <option><%=i%></option>
-                <% } %>
-            </select>
-        </div>
-    </div>
+    <!-- DATOS DE TARJETA -->
+    <div class="bloque-form mb-4">
+        <h5 class="bloque-title">💳 Datos de la tarjeta</h5>
 
-    <div class="col-md-3">
-        <label class="label-light">Código de seguridad</label>
-        <input
-    type="text"
-    id="cvv"
-    name="cvv"
-    class="form-control input-light"
-    placeholder="CVV"
-    maxlength="4"
-    onkeydown="soloNumerosCVV(event)"
-    oninput="limpiarCVV(this)">
-    </div>
-</div>
-<!-- Información de facturación -->
-    <h4 class="mt-4 mb-3">INFORMACIÓN DE FACTURACIÓN</h4>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="label-light">Número de tarjeta</label>
+                <input
+                    id="numeroTarjeta"
+                    name="numeroTarjeta"
+                    type="text"
+                    class="form-control input-light"
+                    placeholder="XXXX XXXX XXXX XXXX"
+                    maxlength="19"
+                    onkeydown="soloNumeros(event)"
+                    oninput="formatearTarjeta(this)">
+            </div>
 
-    <div class="row mb-3">
-        <div class="col-md-6">
-            <label class="label-light">Nombre</label>
-            <input type="text" name="nombre" class="form-control input-light">
-        </div>
+            <div class="col-md-3">
+                <label class="label-light">Fecha de caducidad</label>
+                <div class="d-flex gap-2">
+                    <select name="mes" class="form-select select-light">
+                        <option>--</option>
+                        <% for(int i=1;i<=12;i++){ %>
+                            <option><%=i%></option>
+                        <% } %>
+                    </select>
 
-        <div class="col-md-6">
-            <label class="label-light">Apellidos</label>
-            <input type="text" name="apellido" class="form-control input-light">
+                    <select name="anio" class="form-select select-light">
+                        <option>----</option>
+                        <% for(int i=2025;i<=2050;i++){ %>
+                            <option><%=i%></option>
+                        <% } %>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <label class="label-light">CVV</label>
+                <input
+                    type="text"
+                    id="cvv"
+                    name="cvv"
+                    class="form-control input-light"
+                    placeholder="CVV"
+                    maxlength="4"
+                    onkeydown="soloNumerosCVV(event)"
+                    oninput="limpiarCVV(this)">
+            </div>
         </div>
     </div>
 
-    <div class="row mb-3">
-        <div class="col-md-6">
-            <label class="label-light">Dirección de facturación</label>
-            <input type="text" class="form-control input-light">
+    <!-- FACTURACIÓN -->
+    <div class="bloque-form mb-4">
+        <h5 class="bloque-title">🧾 Información de facturación</h5>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="label-light">Nombre</label>
+                <input type="text" name="nombre" class="form-control input-light">
+            </div>
+
+            <div class="col-md-6">
+                <label class="label-light">Apellidos</label>
+                <input type="text" name="apellido" class="form-control input-light">
+            </div>
         </div>
 
-        <div class="col-md-6">
-            <label class="label-light">Localidad</label>
-            <input type="text" class="form-control input-light">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="label-light">Dirección</label>
+                <input type="text" class="form-control input-light">
+            </div>
+
+            <div class="col-md-6">
+                <label class="label-light">Localidad</label>
+                <input type="text" class="form-control input-light">
+            </div>
         </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="label-light">Dirección (línea 2)</label>
+                <input type="text" class="form-control input-light">
+            </div>
+
+            <div class="col-md-6">
+                <label class="label-light">Código postal</label>
+                <input type="text" class="form-control input-light">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="label-light">País</label>
+                <select class="form-select select-light">
+                    <option>Perú</option>
+                    <option>Argentina</option>
+                    <option>Chile</option>
+                    <option>México</option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label class="label-light">Teléfono</label>
+                <input type="text" class="form-control input-light" maxlength="9">
+            </div>
+        </div>
+
+        <label class="mt-2">
+            <input type="checkbox" name="guardarTarjeta" value="SI">
+            Guardar tarjeta para futuros pagos
+        </label>
     </div>
 
-    <div class="row mb-3">
-        <div class="col-md-6">
-            <label class="label-light">Dirección de facturación (segunda línea)</label>
-            <input type="text" class="form-control input-light">
-        </div>
+<% } %>
 
-        <div class="col-md-6">
-            <label class="label-light">Código postal o zip</label>
-            <input type="text" class="form-control input-light">
-        </div>
+    <!-- BOTÓN COMPRAR -->
+    <div class="text-end mt-4">
+        <button type="submit" class="btn btn-pago-tarjeta">
+            💰 Confirmar pago
+        </button>
     </div>
-
-    <div class="row mb-3">
-        <div class="col-md-6">
-            <label class="label-light">País</label>
-            <select class="form-select select-light">
-                <option>Perú</option>
-                <option>Argentina</option>
-                <option>Chile</option>
-                <option>México</option>
-            </select>
-        </div>
-
-        <div class="col-md-6">
-            <label class="label-light">Teléfono</label>
-            <input type="text" class="form-control input-light" maxlength="9">
-        </div>
-    </div>
-     <label>
-        <input type="checkbox" name="guardarTarjeta" value="SI">
-        Guardar tarjeta para futuros pagos
-    </label>
-   <%
-    }
-%>
-
-    <button type="submit" class="btn btn-success">
-        COMPRAR
-    </button>
-
-   
 
 </form>
- 
- <script>
+
+<script>
  function soloNumerosCVV(e) {
 	    const teclasPermitidas = [
 	        'Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'

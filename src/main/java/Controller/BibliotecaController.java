@@ -32,6 +32,7 @@ public class BibliotecaController extends HttpServlet {
 			break;
 		case "listarBibliotecaAmigo":
 			listarBibliotecaAmigo(request, response);
+			break;
 		default:
 			listarBibliotecaPersonal(request, response);
 			break;
@@ -59,6 +60,7 @@ public class BibliotecaController extends HttpServlet {
 			request.setAttribute("listarBiblioteca",modelo.listarBiblioteca(idAmigo));
 			request.setAttribute("nombre", nombreAmigo);
 			request.getRequestDispatcher("biblioteca/bibliotecaAmigo.jsp").forward(request, response);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

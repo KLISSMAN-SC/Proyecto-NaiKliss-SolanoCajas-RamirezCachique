@@ -3,76 +3,83 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <%
 String url = request.getContextPath() + "/";
 List<Categoria> listarCategoria = (List<Categoria>) request.getAttribute("listarCategoria");
 List<Creador> listarCreador = (List<Creador>) request.getAttribute("listarCreador");
 %>
-	<form action="<%=url%>TiendaController" method="GET" id="formFiltro">
-	<input type="hidden" name="op" value="filtro">
-	    <div class="mb-3">
-            <label class="form-label fw-bold">Por Categoría</label>
-            <select class="form-select" name="categoria">
-                <option value="">Todas</option>
-                <%
-                if (listarCategoria != null && !listarCategoria.isEmpty()) {
-                    for (Categoria categoria : listarCategoria) {
-                %>
-                <option value="<%=categoria.getCategoria()%>"><%=categoria.getCategoria()%> (<%=categoria.getAbreviatura()%>)</option>
-                <%
-                    }
-                } else {
-                %>
-                <option value="" disabled>No hay categorias disponibles</option>
-                <%
+
+<form action="<%=url%>TiendaController" method="GET" id="formFiltro" class="filtro-form">
+    <input type="hidden" name="op" value="filtro">
+
+    <!-- CATEGORIA -->
+    <div class="mb-4">
+        <label class="form-label filtro-label">Categoría</label>
+        <select class="form-select filtro-select" name="categoria">
+            <option value="">Todas</option>
+            <%
+            if (listarCategoria != null && !listarCategoria.isEmpty()) {
+                for (Categoria categoria : listarCategoria) {
+            %>
+            <option value="<%=categoria.getCategoria()%>">
+                <%=categoria.getCategoria()%> (<%=categoria.getAbreviatura()%>)
+            </option>
+            <%
                 }
-                %>
-            </select>
-        </div>
+            } else {
+            %>
+            <option value="" disabled>No hay categorías disponibles</option>
+            <%
+            }
+            %>
+        </select>
+    </div>
 
-        <!-- FILTRAR POR PRECIO -->
-        <div class="row mb-3">
-            <label class="form-label fw-bold">Por Precio</label>
-
+    <!-- PRECIO -->
+    <div class="mb-4">
+        <label class="form-label filtro-label">Rango de precio</label>
+        <div class="row g-3">
             <div class="col-6">
-                <input type="number" name="precioMin" class="form-control" min="1"  name="precioMin" placeholder="Mínimo">
+                <input type="number" name="precioMin" class="form-control filtro-input"
+                       min="1" placeholder="Precio mínimo">
             </div>
-
             <div class="col-6">
-                <input type="number" name="precioMax" class="form-control" min="1" name="precioMax" placeholder="Máximo">
+                <input type="number" name="precioMax" class="form-control filtro-input"
+                       min="1" placeholder="Precio máximo">
             </div>
         </div>
+    </div>
 
-        <!-- FILTRAR POR CREADOR / DESARROLLADOR -->
-        <div class="mb-3">
-            <label class="form-label fw-bold">Por Creador</label>
-            <select class="form-select" name="creador">
-                <option value="">Todos</option>
-                <%
-                if (listarCreador != null && !listarCreador.isEmpty()) {
-                    for (Creador creador : listarCreador) {
-                %>
-                <option value="<%=creador.getDesarrollador()%>"><%=creador.getDesarrollador()%></option>
-                <%
-                    }
-                } else {
-                %>
-                <option value="" disabled>No hay creadores disponibles</option>
-                <%
+    <!-- CREADOR -->
+    <div class="mb-4">
+        <label class="form-label filtro-label">Creador / Desarrollador</label>
+        <select class="form-select filtro-select" name="creador">
+            <option value="">Todos</option>
+            <%
+            if (listarCreador != null && !listarCreador.isEmpty()) {
+                for (Creador creador : listarCreador) {
+            %>
+            <option value="<%=creador.getDesarrollador()%>">
+                <%=creador.getDesarrollador()%>
+            </option>
+            <%
                 }
-                %>
-            </select>
-        </div>
+            } else {
+            %>
+            <option value="" disabled>No hay creadores disponibles</option>
+            <%
+            }
+            %>
+        </select>
+    </div>
 
-        
-		
-        <!-- BOTÓN OK -->
-        <div class="text-center mt-4">
-        	
-            <button type="submit" class="btn btn-primary px-4" >
-                OK
-            </button>
-        </div>
-	    
-	</form>
-	
+    <!-- BOTONES -->
+    <div class="d-flex justify-content-end gap-3 mt-4">
+        <button type="submit" class="btn btn-aplicar">
+            Aplicar filtros
+        </button>
+    </div>
+
+</form>
+
