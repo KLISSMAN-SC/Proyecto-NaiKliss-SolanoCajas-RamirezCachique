@@ -119,7 +119,7 @@ String rol = (String) session.getAttribute("rol");
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="<%=url%>/usuario/perfil.jsp">Perfil</a></li>
                         <li><a class="dropdown-item" href="<%=url%>/usuario/amigos.jsp">Amigos</a></li>
-                        <li><a class="dropdown-item" href="<%=url%>/usuario/historialCompras.jsp">Historial de compras</a></li>
+                        <li><a class="dropdown-item" href="<%=url%>/BibliotecaController?op=formularioReportes">Historial</a></li>
                         <li><a class="dropdown-item" href="<%=url%>/RecargaController?op=añadirFondos">Añadir Fondos</a></li>
                     </ul>
                 </li>

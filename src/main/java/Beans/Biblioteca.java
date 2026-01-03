@@ -14,7 +14,7 @@ public class Biblioteca {
 		
 	}
 	
-	
+
 	
 	public Biblioteca(int idDetalle, int idVideojuego, int idBiblioteca) {
 		super();
@@ -65,5 +65,5 @@ public class Biblioteca {
 		this.categoria = categoria;
 	}
 	
-	
+
 }

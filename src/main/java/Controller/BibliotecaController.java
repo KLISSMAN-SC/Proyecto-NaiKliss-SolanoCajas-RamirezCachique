@@ -23,7 +23,7 @@ public class BibliotecaController extends HttpServlet {
     		throws ServletException, IOException {
 		String opcion = request.getParameter("op");
 		if(opcion==null) {
-			
+			listarBibliotecaPersonal(request, response);
 			return;
 		}
 		switch (opcion) {
@@ -32,6 +32,9 @@ public class BibliotecaController extends HttpServlet {
 			break;
 		case "listarBibliotecaAmigo":
 			listarBibliotecaAmigo(request, response);
+			break;
+		case "formularioReportes":
+			formularioReportes(request, response);
 			break;
 		default:
 			listarBibliotecaPersonal(request, response);
@@ -64,6 +67,20 @@ public class BibliotecaController extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+    }
+    private void formularioReportes(HttpServletRequest request, HttpServletResponse response) 
+    		throws ServletException, IOException{
+    	response.setContentType("text/html; charset=UTF-8");
+        
+    	HttpSession session = request.getSession(false);   
+    	int id=(int) session.getAttribute("idUsuario");
+    	
+    	int cantidadJuegos=modelo.obtenercantidadVideojuegos(id);
+    	int cantidadAmigos=modelo.obtenerCantidadAmigos(id);
+    	request.setAttribute("cantidadJuegos", cantidadJuegos);
+    	request.setAttribute("cantidadAmigos", cantidadAmigos);
+    	request.getRequestDispatcher("usuario/historialCompras.jsp").forward(request, response);
+    	
     }
 
 	

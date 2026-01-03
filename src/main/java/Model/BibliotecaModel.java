@@ -35,4 +35,44 @@ public class BibliotecaModel extends Conexion {
 		}
 		return biblioteca;
 	}
+	public int obtenerCantidadAmigos(int idUsuario) {
+		int cantidad=0;
+		try {
+			
+			String sql="CALL sp_contarAmigos(?)";
+			this.abrirConexion();
+			cs=conexion.prepareCall(sql);
+			cs.setInt(1, idUsuario);
+			rs=cs.executeQuery();
+			if(rs.next()) {
+				cantidad=rs.getInt("total");
+			}
+			this.cerrarConexion();
+		} catch (Exception e) {
+			e.printStackTrace();
+			this.cerrarConexion();
+		}
+		return cantidad;
+	}
+	
+	public int obtenercantidadVideojuegos(int idUsuario) {
+		
+		int cantidad=0;
+		try {
+			
+			String sql="CALL sp_contarVideojuegos(?)";
+			this.abrirConexion();
+			cs=conexion.prepareCall(sql);
+			cs.setInt(1, idUsuario);
+			rs=cs.executeQuery();
+			if(rs.next()) {
+				cantidad=rs.getInt("CANTIDAD");
+			}
+			this.cerrarConexion();
+		} catch (Exception e) {
+			e.printStackTrace();
+			this.cerrarConexion();
+		}
+		return cantidad;
+	}
 }
