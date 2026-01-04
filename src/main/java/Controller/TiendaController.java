@@ -92,7 +92,7 @@ public class TiendaController extends HttpServlet {
         	int idVideojuego = Integer.parseInt(request.getParameter("id"));
         	int idUsuario = (int) session.getAttribute("idUsuario");
         	modelo.añadirCarrito(idVideojuego, idUsuario);
-        	listar(request, response);
+        	tabla(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

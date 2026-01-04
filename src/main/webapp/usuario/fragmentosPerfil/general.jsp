@@ -68,21 +68,6 @@
     <button type="submit" class="btn-save">Guardar cambios</button>
 </form>
 
-<script>
-    const selectPais = document.getElementById("selectPais");
-    const contenedorEstado = document.getElementById("contenedorEstado");
-    const inputEstado = document.getElementById("inputEstado");
-
-    selectPais.addEventListener("change", () => {
-        if (selectPais.value !== "") {
-            contenedorEstado.style.display = "block";
-            inputEstado.disabled = false;
-        } else {
-            contenedorEstado.style.display = "none";
-            inputEstado.disabled = true;
-            inputEstado.value = "";
-        }
-    });
-</script>
+<script src="<%= url %>ScriptCss/js/general.js"></script>
 </body>
 </html>

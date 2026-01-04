@@ -17,46 +17,7 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<style>
-    body {
-        background-color: #f4f6f9;
-    }
-
-    .biblioteca-container {
-        width: 90%;
-        margin: 40px auto;
-        background-color: #fff;
-        border-radius: 16px;
-        padding: 25px;
-        box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-    }
-
-    .biblioteca-title {
-        text-align: center;
-        font-weight: 800;
-        margin-bottom: 30px;
-    }
-
-    .tabla-scroll {
-        max-height: 420px;
-        overflow-y: auto;
-        border-radius: 12px;
-    }
-
-    thead th {
-        position: sticky;
-        top: 0;
-        background-color: #212529;
-        color: white;
-        z-index: 2;
-    }
-
-    .empty-row {
-        padding: 30px;
-        font-weight: 600;
-        color: #6c757d;
-    }
-</style>
+<link rel="stylesheet" href="<%= url %>ScriptCss/css/bibliotecaAmigo.css">
 </head>
 
 <body>

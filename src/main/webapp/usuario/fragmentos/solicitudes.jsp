@@ -3,71 +3,16 @@
 <%@ page import="java.util.List"%>
 <%@ page import="Beans.Amistad"%>
 
-<style>
-    .solicitud-card {
-        background-color: #E1E3DB;
-        border-radius: 16px;
-        padding: 20px;
-        box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
 
-    .solicitud-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 18px 35px rgba(0,0,0,0.2);
-    }
-
-    .solicitud-avatar {
-        width: 64px;
-        height: 64px;
-        border-radius: 50%;
-        border: 3px solid #9E0004;
-        background-color: #fff;
-    }
-
-    .solicitud-nombre {
-        font-weight: 700;
-        color: #161917;
-        margin-bottom: 2px;
-    }
-
-    .solicitud-texto {
-        font-size: 0.9rem;
-        color: #70160E;
-        opacity: 0.85;
-        margin-bottom: 0;
-    }
-
-    .btn-aceptar {
-        background-color: #B9030F;
-        border: none;
-        color: #E1E3DB;
-        font-weight: 600;
-    }
-
-    .btn-aceptar:hover {
-        background-color: #9E0004;
-    }
-
-    .btn-rechazar {
-        background-color: #161917;
-        border: none;
-        color: #E1E3DB;
-        font-weight: 600;
-    }
-
-    .btn-rechazar:hover {
-        background-color: #70160E;
-    }
-</style>
 
 <h3 class="mb-4">📨 Solicitudes de amistad</h3>
 
 <%
+String url = request.getContextPath() + "/";
 List<Amistad> lista = (List<Amistad>) request.getAttribute("listar");
 
 %>
-
+<link rel="stylesheet" href="<%= url %>ScriptCss/css/solicitudes.css">
 <% if (lista != null && !lista.isEmpty()) { %>
 
 <div class="row g-4">

@@ -19,69 +19,7 @@ String rol = (String) session.getAttribute("rol");
 <meta charset="UTF-8">
 <title>Navbar</title>
 
-<style>
-    .navbar-custom {
-        background-color: #161917;
-        padding: 0.8rem 1.5rem;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    }
-
-    .navbar-brand {
-        color: #9E0004 !important;
-        font-weight: 800;
-        font-size: 1.4rem;
-        letter-spacing: 1px;
-    }
-
-    .nav-link {
-        color: #E1E3DB !important;
-        font-weight: 500;
-        margin-right: 10px;
-        transition: color 0.3s ease, transform 0.2s ease;
-    }
-
-    .nav-link:hover {
-        color: #B9030F !important;
-        transform: translateY(-2px);
-    }
-
-    .nav-link.active {
-        color: #9E0004 !important;
-        font-weight: 600;
-    }
-
-    .dropdown-menu {
-        background-color: #E1E3DB;
-        border-radius: 12px;
-        border: none;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-        z-index: 9999;
-    }
-
-    .dropdown-item {
-        color: #161917;
-        font-weight: 500;
-        transition: background-color 0.3s ease, padding-left 0.3s ease;
-    }
-
-    .dropdown-item:hover {
-        background-color: #9E0004;
-        color: #E1E3DB;
-        padding-left: 20px;
-    }
-
-    .dropdown-divider {
-        border-color: #70160E;
-    }
-
-    .navbar-toggler {
-        border: none;
-    }
-
-    .navbar-toggler-icon {
-        filter: invert(1);
-    }
-</style>
+<link rel="stylesheet" href="<%= url %>/ScriptCss/css/navbar.css">
 
 </head>
 <body>
@@ -104,7 +42,7 @@ String rol = (String) session.getAttribute("rol");
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                 <li class="nav-item">
-                    <a class="nav-link active" href="<%=url%>/TiendaController?op=asd">
+                    <a class="nav-link" href="<%=url%>/TiendaController?op=asd">
                         TIENDA
                     </a>
                 </li>

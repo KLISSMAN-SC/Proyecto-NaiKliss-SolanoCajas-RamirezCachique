@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" 
     pageEncoding="UTF-8"%>
 <%
+	String url = request.getContextPath() + "/";
     String monto = request.getParameter("monto"); 
     if (monto == null) monto = "0";
 %>
@@ -12,100 +13,7 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<style>
-    body {
-        background-color: #161917;
-        font-family: Arial, sans-serif;
-        color: #161917;
-    }
-
-    .page-wrapper {
-        max-width: 1100px;
-        margin: 50px auto;
-        padding: 0 15px;
-    }
-
-    .card-main {
-        background: #E1E3DB;
-        border-radius: 16px;
-        padding: 35px;
-        box-shadow: 0 25px 50px rgba(0,0,0,0.35);
-    }
-
-    .section-title {
-        font-weight: 800;
-        margin-bottom: 20px;
-        color: #161917;
-    }
-
-    .divider {
-        height: 1px;
-        background: #ccc;
-        margin: 30px 0;
-    }
-
-    /* Resumen */
-    .summary-box {
-        background: #f5f6f2;
-        border-left: 6px solid #B9030F;
-        padding: 20px;
-        border-radius: 10px;
-        margin-bottom: 30px;
-    }
-
-    .summary-box strong {
-        font-size: 1.4rem;
-        color: #9E0004;
-    }
-
-    /* Inputs */
-    .label-light {
-        font-weight: 600;
-        margin-bottom: 6px;
-        color: #161917;
-    }
-
-    .input-light,
-    .select-light {
-        border-radius: 8px;
-        border: 1px solid #bbb;
-        padding: 10px;
-    }
-
-    .input-light:focus,
-    .select-light:focus {
-        border-color: #B9030F;
-        box-shadow: 0 0 0 0.15rem rgba(185,3,15,0.25);
-    }
-
-    /* Botón */
-    .btn-main {
-        background-color: #B9030F;
-        color: #fff;
-        font-weight: bold;
-        padding: 14px;
-        font-size: 18px;
-        border-radius: 10px;
-        border: none;
-        transition: all 0.2s ease;
-    }
-
-    .btn-main:hover {
-        background-color: #9E0004;
-        transform: translateY(-1px);
-    }
-
-    /* Etiquetas visuales */
-    .chip {
-        display: inline-block;
-        background: #70160E;
-        color: #fff;
-        padding: 4px 10px;
-        border-radius: 20px;
-        font-size: 0.85rem;
-        margin-bottom: 10px;
-    }
-</style>
+<link rel="stylesheet" href="<%= url %>ScriptCss/css/pagoTarjeta.css">
 </head>
 
 <body>

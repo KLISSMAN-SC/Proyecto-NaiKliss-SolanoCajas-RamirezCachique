@@ -1,4 +1,5 @@
 //cargar la tabla al iniciar
+console.log("✅ tienda.js cargado");
 window.addEventListener("DOMContentLoaded", function() {
 	    fetch("TiendaController?op=tabla")
 	        .then(response => response.text())
@@ -67,3 +68,6 @@ document.getElementById("buscar").addEventListener("keyup", function() {
 	                "<p class='text-danger'>No se pudo cargar el contenido.</p>";
 	        });
 	});
+	
+	
+	

@@ -1,91 +1,92 @@
 <%@page import="Beans.VideoJuego"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 
-<table class="table table-hover table-bordered align-middle text-center tabla-tienda">
+<table
+	class="table table-hover table-bordered align-middle text-center tabla-tienda">
 
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Precio</th>
-            <th>Descripción</th>
-            <th>Desarrollador</th>
-            <th>Categoría</th>
-            <th>Estado</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Nombre</th>
+			<th>Precio</th>
+			<th>Descripción</th>
+			<th>Desarrollador</th>
+			<th>Categoría</th>
+			<th>Estado</th>
+			<th>Acciones</th>
+		</tr>
+	</thead>
 
-    <tbody>
-        <%
-        List<VideoJuego> lista = (List<VideoJuego>) request.getAttribute("lista");
-        if (lista != null && !lista.isEmpty()) {
-            for (VideoJuego videojuego : lista) {
-        %>
+	<tbody>
+		<%
+		List<VideoJuego> lista = (List<VideoJuego>) request.getAttribute("lista");
+		if (lista != null && !lista.isEmpty()) {
+			for (VideoJuego videojuego : lista) {
+		%>
 
-        <tr>
-            <td><%=videojuego.getIdVideoJuego()%></td>
+		<tr>
+			<td><%=videojuego.getIdVideoJuego()%></td>
 
-            <td class="fw-bold">
-                <%=videojuego.getNombre()%>
-            </td>
+			<td class="fw-bold"><%=videojuego.getNombre()%></td>
 
-            <td>
-                <% if (videojuego.getPrecio() != 0) { %>
-                    <span class="precio">S/. <%=videojuego.getPrecio()%></span>
-                <% } else { %>
-                    <span class="precio-gratis">Gratis</span>
-                <% } %>
-            </td>
+			<td>
+				<%
+				if (videojuego.getPrecio() != 0) {
+				%> <span class="precio">S/. <%=videojuego.getPrecio()%></span> <%
+ } else {
+ %> <span class="precio-gratis">Gratis</span> <%
+ }
+ %>
+			</td>
 
-            <td class="descripcion">
-                <%=videojuego.getDescripcion()%>
-            </td>
+			<td class="descripcion"><%=videojuego.getDescripcion()%></td>
 
-            <td><%=videojuego.getDesarrollador()%></td>
-            <td><%=videojuego.getCategoria()%></td>
+			<td><%=videojuego.getDesarrollador()%></td>
+			<td><%=videojuego.getCategoria()%></td>
 
-            <td>
-                <%
-                String estado = videojuego.getEstado();
-                String estadoClass = "";
+			<td>
+				<%
+				String estado = videojuego.getEstado();
+				String estadoClass = "";
 
-                if (estado.equals("Disponible")) {
-                    estadoClass = "estado-disponible";
-                } else if (estado.equals("Carrito")) {
-                    estadoClass = "estado-carrito";
-                } else if (estado.equals("Biblioteca")) {
-                    estadoClass = "estado-biblioteca";
-                }
-                %>
+				if (estado.equals("Disponible")) {
+					estadoClass = "estado-disponible";
+				} else if (estado.equals("Carrito")) {
+					estadoClass = "estado-carrito";
+				} else if (estado.equals("Biblioteca")) {
+					estadoClass = "estado-biblioteca";
+				}
+				%> <span class="estado <%=estadoClass%>"> <%=estado%>
+			</span>
+			</td>
 
-                <span class="estado <%=estadoClass%>">
-                    <%=estado%>
-                </span>
-            </td>
+			<td>
+				<%
+				boolean desactivar = videojuego.getEstado().equals("Carrito") || videojuego.getEstado().equals("Biblioteca");
+				%>
 
-            <td>
-                <%
-                boolean desactivar = videojuego.getEstado().equals("Carrito")
-                                  || videojuego.getEstado().equals("Biblioteca");
-                %>
+				<button class="btn btn-anadir <%= desactivar ? "disabled" : "" %>"
+        onclick="agregarAlCarrito(event, <%= videojuego.getIdVideoJuego() %>)"
+        <%= desactivar ? "disabled" : "" %>>
+    Añadir
+</button>
+			</td>
+		</tr>
 
-                <a class="btn btn-anadir <%= desactivar ? "disabled" : "" %>"
-                   href="<%= request.getContextPath() %>/TiendaController?op=añadirCarrito&id=<%= videojuego.getIdVideoJuego() %>"
-                   <%= desactivar ? "tabindex='-1' aria-disabled='true'" : "" %>>
-                    Añadir
-                </a>
-            </td>
-        </tr>
-
-        <% } } else { %>
-        <tr>
-            <td colspan="8" class="text-center fw-bold">
-                Sin resultados
-            </td>
-        </tr>
-        <% } %>
-    </tbody>
+		<%
+		}
+		} else {
+		%>
+		<tr>
+			<td colspan="8" class="text-center fw-bold">Sin resultados</td>
+		</tr>
+		<%
+		}
+		%>
+	</tbody>
+	
 </table>
+
+

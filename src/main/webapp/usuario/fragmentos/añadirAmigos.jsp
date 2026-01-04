@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+    String url = request.getContextPath() + "/";
 
+%>
+<link rel="stylesheet" href="<%= url %>ScriptCss/css/añadirAmigos.css">
 <div class="container add-friends-container">
 
     <h3 class="section-title mb-4">➕ Añadir amigos</h3>
@@ -58,72 +62,4 @@
 
 </div>
 
-<style>
-    
 
-    .add-friends-container {
-        max-width: 900px;
-        margin-top: 40px;
-        margin-bottom: 40px;
-    }
-
-    .section-title {
-        font-weight: 800;
-        color: #161917;
-        text-align: center;
-    }
-
-    /* Card base */
-    .search-card {
-        background-color: #E1E3DB;
-        border-radius: 18px;
-        padding: 24px;
-        box-shadow: 0 18px 35px rgba(0,0,0,0.35);
-        transition: transform 0.2s ease;
-    }
-
-    .search-card:hover {
-        transform: translateY(-2px);
-    }
-
-    .card-title {
-        font-weight: 700;
-        color: #161917;
-        margin-bottom: 4px;
-    }
-
-    .card-subtitle {
-        font-size: 0.9rem;
-        color: #70160E;
-        opacity: 0.85;
-        margin-bottom: 10px;
-    }
-
-    /* Inputs */
-    .custom-input {
-        border-radius: 10px 0 0 10px;
-        border: 1px solid #9E0004;
-        background-color: #fff;
-    }
-
-    .custom-input:focus {
-        border-color: #B9030F;
-        box-shadow: 0 0 0 2px rgba(185,3,15,0.15);
-    }
-
-    /* Botón */
-    .btn-search {
-        background-color: #B9030F;
-        color: #E1E3DB;
-        font-weight: 700;
-        padding: 0 22px;
-        border-radius: 0 10px 10px 0;
-        border: none;
-        transition: background-color 0.2s ease;
-    }
-
-    .btn-search:hover {
-        background-color: #9E0004;
-        color: #E1E3DB;
-    }
-</style>

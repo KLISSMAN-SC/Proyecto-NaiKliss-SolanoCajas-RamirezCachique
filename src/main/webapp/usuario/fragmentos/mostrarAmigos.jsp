@@ -9,7 +9,7 @@
 List<Amistad> lista = (List<Amistad>) request.getAttribute("listar");
 String url = request.getContextPath() + "/";
 %>
-
+<link rel="stylesheet" href="<%= url %>ScriptCss/css/mostrarAmigos.css">
 <%
 if (lista != null && !lista.isEmpty()) {
 %>
@@ -68,48 +68,3 @@ if (lista != null && !lista.isEmpty()) {
 }
 %>
 
-<style>
-/* Cards de amigos */
-.friend-card {
-	background-color: #E1E3DB;
-	border-radius: 16px;
-	border: none;
-	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
-	transition: all 0.2s ease;
-	cursor: pointer;
-}
-
-.friend-card:hover {
-	transform: translateY(-4px);
-	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-}
-
-/* Avatar */
-.friend-avatar {
-	width: 70px;
-	height: 70px;
-	margin: 0 auto;
-	border-radius: 50%;
-	background-color: #161917;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.friend-avatar span {
-	color: #E1E3DB;
-	font-size: 28px;
-	font-weight: 700;
-}
-
-.friend-card h5 {
-	font-weight: 700;
-	color: #161917;
-}
-
-.friend-hint {
-	color: #9E0004;
-	font-size: 0.9rem;
-	font-weight: 600;
-}
-</style>

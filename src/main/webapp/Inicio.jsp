@@ -1,6 +1,11 @@
 <%@page import="Beans.Usuario"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%
+String url = request.getContextPath();
+	
+
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,117 +14,13 @@
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
 	rel="stylesheet">
-<link
+	<link
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
 	rel="stylesheet">
 
 <title>Inicio</title>
-<%
-String url = request.getContextPath();
 
-%>
-<style>
-body {
-	background-color: #161917;
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	color: #E1E3DB;
-}
-
-/* HERO */
-.hero {
-	background: linear-gradient(135deg, #161917, #70160E);
-	padding: 80px 20px;
-	text-align: center;
-	margin-bottom: 50px;
-}
-
-.hero h1 {
-	font-size: 3rem;
-	font-weight: 800;
-	color: #B9030F;
-	letter-spacing: 1px;
-}
-
-.hero p {
-	color: #E1E3DB;
-	font-size: 1.15rem;
-	margin-top: 10px;
-	margin-bottom: 30px;
-	opacity: 0.9;
-}
-
-.hero .btn {
-	padding: 12px 28px;
-	border-radius: 30px;
-	font-weight: 600;
-	margin: 0 8px;
-}
-
-/* TITULOS */
-.section-title {
-	color: #9E0004;
-	font-weight: 700;
-	text-align: center;
-	margin-bottom: 10px;
-}
-
-.section-subtitle {
-	text-align: center;
-	color: #b5b5b5;
-	margin-bottom: 40px;
-	font-size: 0.95rem;
-}
-
-/* CARDS CON ICONOS */
-.card {
-	border: none;
-	border-radius: 20px;
-	background-color: #161917;
-	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-	text-align: center;
-	padding: 35px 20px;
-	cursor: pointer;
-}
-
-.card:hover {
-	transform: translateY(-10px);
-	box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
-}
-
-.card-icon {
-	font-size: 3.5rem;
-	color: #B9030F;
-	margin-bottom: 15px;
-	transition: transform 0.3s ease;
-}
-
-.card:hover .card-icon {
-	transform: scale(1.15);
-}
-
-.card-title {
-	font-size: 1.2rem;
-	font-weight: 700;
-	margin-bottom: 6px;
-	color: #E1E3DB;
-}
-
-.card-subtitle {
-	font-size: 0.9rem;
-	color: #b5b5b5;
-}
-
-.card-link {
-	text-decoration: none;
-	color: inherit;
-	display: block;
-}
-
-.container {
-	padding-bottom: 60px;
-}
-</style>
+<link rel="stylesheet" href="<%= url %>/ScriptCss/css/inicio.css">
 
 </head>
 <body>
