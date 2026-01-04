@@ -8,12 +8,16 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
+import java.util.List;
+
+import Beans.Amistad;
+import Beans.Biblioteca;
 import Model.*;
 
 @WebServlet("/BibliotecaController")
 public class BibliotecaController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    BibliotecaModel modelo=new BibliotecaModel();   
+BibliotecaModel modelo=new BibliotecaModel();   
     
     public BibliotecaController() {
         super();
@@ -77,9 +81,16 @@ public class BibliotecaController extends HttpServlet {
     	
     	int cantidadJuegos=modelo.obtenercantidadVideojuegos(id);
     	int cantidadAmigos=modelo.obtenerCantidadAmigos(id);
+    	List<Biblioteca> datosCategoria=modelo.listarPorCategoria(id);
+    	Biblioteca categoria=modelo.categoriaFavorita(id);
+    	List<Amistad> datosAmigos=modelo.listarJuegosAmigos(id);
+    	
     	request.setAttribute("cantidadJuegos", cantidadJuegos);
     	request.setAttribute("cantidadAmigos", cantidadAmigos);
-    	request.getRequestDispatcher("usuario/historialCompras.jsp").forward(request, response);
+    	request.setAttribute("lista", datosCategoria);
+    	request.setAttribute("categoriaFav", categoria);
+    	request.setAttribute("lista2", datosAmigos);
+    	request.getRequestDispatcher("usuario/reportes.jsp").forward(request, response);
     	
     }
 

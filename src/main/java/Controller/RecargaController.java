@@ -46,8 +46,13 @@ public class RecargaController extends HttpServlet {
     protected void añadirFondos(HttpServletRequest request, HttpServletResponse response) 
     		throws ServletException, IOException{
     	response.setContentType("text/html; charset=UTF-8");
+    	HttpSession session = request.getSession(false);
     	
-    	response.sendRedirect(request.getContextPath() + "/usuario/recargarFondos.jsp");
+    	double saldoSesion = (double) session.getAttribute("saldo");
+    	
+    	request.setAttribute("saldo", saldoSesion);
+    	request.getRequestDispatcher("/usuario/recargarFondos.jsp").forward(request, response);
+    
     }
     protected void pagoTarjeta(HttpServletRequest request, HttpServletResponse response) 
     		throws ServletException, IOException{

@@ -9,7 +9,7 @@ public class Biblioteca {
 	private String descripcion;
 	private String desarrollador;
 	private String categoria;
-	
+	private int cantidad;
 	public Biblioteca() {
 		
 	}
@@ -28,6 +28,18 @@ public class Biblioteca {
 	public void setIdDetalle(int idDetalle) {
 		this.idDetalle = idDetalle;
 	}
+	public int getCantidad() {
+		return cantidad;
+	}
+
+
+
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
+	}
+
+
+
 	public int getIdVideojuego() {
 		return idVideojuego;
 	}
