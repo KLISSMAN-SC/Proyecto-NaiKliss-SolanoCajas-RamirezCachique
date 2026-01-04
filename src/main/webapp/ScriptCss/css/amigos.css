@@ -13,46 +13,44 @@ body {
 /* SIDEBAR */
 .sidebar {
     width: 270px;
-    /*background: linear-gradient(
-        to bottom,
-        #E1E3DB,
-        #d6d8d0
-    );*/
+    background-color: #1a1a1a; /* Fondo oscuro igual al de la Imagen 2 */
     padding: 30px 20px;
-    border-right: 2px solid #9E0004;
-    box-shadow: 8px 0 20px rgba(0,0,0,0.25);
+    /* Eliminamos el border-right rojo y el shadow lateral para que sea plano */
+    border-right: none; 
 }
 
 .sidebar-title {
     font-weight: 800;
-    color: #161917;
+    color: #ffffff; /* Texto blanco para resaltar en el fondo oscuro */
     text-align: center;
     letter-spacing: 1px;
 }
 
 .sidebar .nav-link {
-    color: #161917;
-    font-weight: 600;
-    border-radius: 14px;
-    padding: 14px 18px;
-    margin-bottom: 12px;
+    color: #ffffff; /* Texto de los enlaces en blanco */
+    font-weight: 500;
+    border-radius: 8px; /* Bordes ligeramente más rectos */
+    padding: 12px 18px;
+    margin-bottom: 8px;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 10px;
-    transition: all 0.25s ease;
+    transition: all 0.2s ease;
 }
 
+/* Efecto Hover: Fondo rojo oscuro como se ve en la Imagen 2 */
 .sidebar .nav-link:hover {
-    
-    color: #161917;
-    transform: translateX(6px);
+    background-color: #9E0004; 
+    color: #ffffff;
+    transform: none; /* Quitamos el desplazamiento lateral */
 }
 
+/* Clase activa: Color rojo sólido para resaltar la sección actual */
 .sidebar .nav-link.active {
-    /*background-color: #9E0004;*/
-    color: #161917;
-    box-shadow: inset 0 0 0 2px #70160E;
+    background-color: #9E0004;
+    color: #ffffff;
+    box-shadow: none;
 }
 
 /* CONTENIDO */

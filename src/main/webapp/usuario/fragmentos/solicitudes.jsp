@@ -65,6 +65,7 @@
 
 <%
 List<Amistad> lista = (List<Amistad>) request.getAttribute("listar");
+
 %>
 
 <% if (lista != null && !lista.isEmpty()) { %>
@@ -78,10 +79,10 @@ List<Amistad> lista = (List<Amistad>) request.getAttribute("listar");
 
             <div class="d-flex align-items-center mb-3">
                 <img
-                    src="https://cdn-icons-png.flaticon.com/512/847/847969.png"
+                    src="/POOIIPROYECTO1.2.2/img/<%=a.getAvatar()%>"
                     class="solicitud-avatar me-3"
-                    alt="avatar">
-
+                    >
+					
                 <div>
                     <div class="solicitud-nombre">
                         <%=a.getNombreAmigo()%>

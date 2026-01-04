@@ -43,6 +43,7 @@ public class AmistadModel extends Conexion {
 				Amistad a=new Amistad();
 				a.setIdAmistad(rs.getInt("ID"));
 				a.setNombreAmigo(rs.getString("Remitente"));
+				a.setAvatar(rs.getString("avatar"));
 				lista.add(a);
 			}
 			this.cerrarConexion();

@@ -1,3 +1,5 @@
+<%@page import="Beans.Biblioteca"%>
+<%@page import="java.util.List"%>
 <%@page import="Beans.Usuario"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -47,6 +49,7 @@ body {
 /* INFO */
 .profile-info h2 {
     margin: 0;
+    color: #d6d8d0;
     font-weight: 800;
 }
 
@@ -166,6 +169,9 @@ body {
     Usuario usuario = (Usuario) request.getAttribute("usuario");
     String path = request.getContextPath() + "/img/";
     String avatarActual = usuario.getAvatar();
+    
+    int amigos = (int) request.getAttribute("amigos");
+    int juegos = (int) request.getAttribute("juegos");
 	%>
 	<!-- ===== HEADER PERFIL ===== -->
 <section class="profile-header">
@@ -199,27 +205,34 @@ body {
 
 <!-- ===== CONTENIDO ===== -->
 <section class="profile-content">
+	<div class="card-box">
+    <h4>Juegos comprados recientemente</h4>
 
-    <!-- ACTIVIDAD -->
-    <div class="card-box">
-        <h4>Actividad reciente</h4>
-
+    <% 
+    List<Biblioteca> listarBiblioteca = (List<Biblioteca>) request.getAttribute("listarBiblioteca");
+    
+    if (listarBiblioteca != null && !listarBiblioteca.isEmpty()) {
+        // Obtenemos el tamaño de la lista para no pasarnos del índice
+        int totalJuegos = listarBiblioteca.size();
+        // Usamos un máximo de 2 juegos
+        int limite = Math.min(totalJuegos, 2);
+        
+        for (int i = 0; i < limite; i++) {
+            Biblioteca juego = listarBiblioteca.get(i);
+    %>
         <div class="activity-item">
-            <img src="https://upload.wikimedia.org/wikipedia/en/2/25/Half-Life_2_cover.jpg">
+            
             <div>
-                <strong>Half-Life 2</strong>
-                <p>Última sesión: 25 Dic 2025</p>
+                <strong><%= juego.getNombreVideojuego() %></strong>
+                
             </div>
         </div>
-
-        <div class="activity-item">
-            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Left4Dead2.jpg/250px-Left4Dead2.jpg">
-            <div>
-                <strong>Left 4 Dead 2</strong>
-                <p>Última sesión: 23 Dic 2025</p>
-            </div>
-        </div>
-    </div>
+    <% 
+        } 
+    } else { %>
+        <p class="text-muted">No hay juegos en tu biblioteca aún.</p>
+    <% } %>
+</div>
 
     <!-- PANEL DERECHO -->
     <div>
@@ -240,8 +253,8 @@ body {
 
         <div class="card-box side-box">
             <h5>Estadísticas</h5>
-            <p>Juegos: <strong>76</strong></p>
-            <p>Amigos: <strong>12</strong></p>
+            <p>Juegos: <strong><%=juegos %></strong></p>
+            <p>Amigos: <strong><%=amigos %></strong></p>
         </div>
 
     </div>

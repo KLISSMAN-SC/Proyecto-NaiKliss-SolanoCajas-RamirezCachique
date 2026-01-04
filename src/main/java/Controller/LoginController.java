@@ -77,7 +77,7 @@ public class LoginController extends HttpServlet {
     			usuarioNuevo.setPassword(pass2);
     			modelo.crearUsuario(usuarioNuevo);
     			request.setAttribute("error", "Cuenta creada correctamente, inicia sesión");
-    			mostrarRegister(request, response);
+    			mostrarLogin(request, response);
     		}else {
     			request.setAttribute("error", "La contraseña debe tener mínimo 8 caracteres.");
                 mostrarRegister(request, response);

@@ -6,6 +6,7 @@
 <%
     String url = (String) request.getContextPath()+ "/";
     double saldo = (double) session.getAttribute("saldo");
+    boolean deshabilitar =true;
 %>
 <html>
 <head>
@@ -132,7 +133,7 @@
     <div class="carrito-header">
         <h2 class="carrito-title">🛒 Carrito de Compras</h2>
 
-        <a href="<%=url%>TiendaController?op=billetera" class="saldo-btn btn">
+        <a href="<%=url%>RecargaController?op=añadirFondos" class="saldo-btn btn">
             Saldo: S/. <%=saldo %>
         </a>
     </div>
@@ -158,7 +159,7 @@
                 int totalJuegos = 0;
                 double precioTotal = 0;
                 int i = 0;
-
+                
                 if (lista != null && !lista.isEmpty()) {
                     for (VideoJuego videojuego : lista) {
                         i++;
@@ -187,7 +188,9 @@
                     </td>
                 </tr>
 
-                <% } } else { %>
+                <% }
+                    deshabilitar = totalJuegos < 1;
+                    } else { %>
                 <tr>
                     <td colspan="7" class="fw-bold">Sin resultados</td>
                 </tr>
@@ -208,8 +211,10 @@
             ← Seguir Comprando
         </a>
 
-        <a href="<%=url%>PagoController?op=formularioComprar&precio=<%=precioTotal %>"
-           class="btn btn-pago">
+       
+        <a href="<%= deshabilitar ? "#" : url + "PagoController?op=formularioComprar&precio=" + precioTotal %>"
+           class="btn btn-pago <%= deshabilitar ? "disabled" : "" %>"
+           style="<%= deshabilitar ? "pointer-events:none;opacity:0.6;" : "" %>">
             Continuar al Pago →
         </a>
     </div>

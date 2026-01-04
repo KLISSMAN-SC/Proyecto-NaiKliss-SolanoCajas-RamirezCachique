@@ -11,6 +11,7 @@ import java.io.IOException;
 
 import Beans.Usuario;
 import Model.AmistadModel;
+import Model.BibliotecaModel;
 import Model.PerfilModel;
 import Model.UsuariosModel;
 
@@ -19,7 +20,7 @@ public class UsuarioController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     PerfilModel model = new PerfilModel();
     AmistadModel model2=new AmistadModel();
-    
+    BibliotecaModel model3= new BibliotecaModel();
     public UsuarioController() {
         super();
     }
@@ -124,6 +125,9 @@ public class UsuarioController extends HttpServlet {
         	int idUsuario = (int) session.getAttribute("idUsuario");
         	Usuario usuario = model2.obtenerUsuarioporId(idUsuario);
         	request.setAttribute("usuario", usuario);
+        	request.setAttribute("amigos", model3.obtenerCantidadAmigos(idUsuario));
+        	request.setAttribute("juegos", model3.obtenercantidadVideojuegos(idUsuario));
+        	request.setAttribute("listarBiblioteca", model3.listarBiblioteca(idUsuario));
         	request.getRequestDispatcher("usuario/perfil.jsp").forward(request, response);
         	
         	

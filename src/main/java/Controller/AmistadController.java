@@ -79,6 +79,7 @@ public class AmistadController extends HttpServlet {
 			    
 		    	int id=(int) session.getAttribute("idUsuario");
 		    	request.setAttribute("listar", modelo.mostrarSolicitudes(id));
+		    	
 		    	request.getRequestDispatcher("/usuario/fragmentos/solicitudes.jsp")
 		           .forward(request, response);
 			} catch (Exception e) {

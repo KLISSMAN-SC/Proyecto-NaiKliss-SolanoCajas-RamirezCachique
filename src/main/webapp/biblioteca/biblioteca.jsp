@@ -66,7 +66,7 @@
     <div class="biblioteca-container">
 
         <h2 class="biblioteca-title">
-            📚 Biblioteca de <span class="text-primary"><%=nombre%></span>
+             Biblioteca de <span class="text-primary"><%=nombre%></span>
         </h2>
 
         <div class="tabla-scroll">
