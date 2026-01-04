@@ -163,7 +163,7 @@ body {
     padding: 10px 18px;
     border-radius: 10px;
     font-weight: 700;
-    text-decoration: none;   /* 🔴 CLAVE PARA <a> */
+    text-decoration: none;   
     
     cursor: pointer;
 }
@@ -240,7 +240,7 @@ body {
     	Collections.reverse(listarBiblioteca);
         int totalJuegos = listarBiblioteca.size();
         int limite = Math.min(totalJuegos, 3);
-        
+         
         for (int i = 0; i < limite; i++) {
             Biblioteca b = listarBiblioteca.get(i);
     %>
