@@ -34,10 +34,7 @@
                 </div>
             </div>
 
-            <div class="avatar-upload">
-                <button type="button" class="btn-secondary">Sube tu avatar</button>
-                <p>Sube un archivo desde tu dispositivo.</p>
-            </div>
+            
         </div>
 
         <div class="avatar-section">
