@@ -17,8 +17,8 @@ import Model.*;
 @WebServlet("/BibliotecaController")
 public class BibliotecaController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-BibliotecaModel modelo=new BibliotecaModel();   
-    
+	BibliotecaModel modelo=new BibliotecaModel();   
+    ReporteModel modelo2=new ReporteModel();
     public BibliotecaController() {
         super();
         
@@ -79,17 +79,20 @@ BibliotecaModel modelo=new BibliotecaModel();
     	HttpSession session = request.getSession(false);   
     	int id=(int) session.getAttribute("idUsuario");
     	
-    	int cantidadJuegos=modelo.obtenercantidadVideojuegos(id);
-    	int cantidadAmigos=modelo.obtenerCantidadAmigos(id);
+    	int cantidadJuegos=modelo2.obtenercantidadVideojuegos(id);
+    	int cantidadAmigos=modelo2.obtenerCantidadAmigos(id);
     	List<Biblioteca> datosCategoria=modelo.listarPorCategoria(id);
     	Biblioteca categoria=modelo.categoriaFavorita(id);
-    	List<Amistad> datosAmigos=modelo.listarJuegosAmigos(id);
+    	List<Amistad> datosAmigos=modelo2.listarJuegosAmigos(id);
+    	double totalAcumulado=modelo2.obtenerTotalAcumulado(id);
+    		
     	
     	request.setAttribute("cantidadJuegos", cantidadJuegos);
     	request.setAttribute("cantidadAmigos", cantidadAmigos);
     	request.setAttribute("lista", datosCategoria);
     	request.setAttribute("categoriaFav", categoria);
     	request.setAttribute("lista2", datosAmigos);
+    	request.setAttribute("totalAcumulado", totalAcumulado);
     	request.getRequestDispatcher("usuario/reportes.jsp").forward(request, response);
     	
     }

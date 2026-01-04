@@ -10,6 +10,7 @@ int cantidadAmigos = (Integer) request.getAttribute("cantidadAmigos");
 List<Biblioteca> b = (List<Biblioteca>) request.getAttribute("lista");
 List<Amistad> a = (List<Amistad>) request.getAttribute("lista2");
 Biblioteca categoria = (Biblioteca) request.getAttribute("categoriaFav");
+double totalAcumulado = (Double) request.getAttribute("totalAcumulado");
 %>
 <!DOCTYPE html>
 <html>
@@ -68,18 +69,23 @@ Biblioteca categoria = (Biblioteca) request.getAttribute("categoriaFav");
 .card-grafico {
 	background-color: var(--blanco-suave);
 	border-radius: 16px;
-	height: 280px; 
-	
+	height: 280px;
 }
+
 .card-grafico .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .card-grafico canvas {
-    max-height: 200px;
+	max-height: 200px;
 }
+
+.text-saldo {
+	color: #4CAF50;
+}
+
 @
 keyframes fadeUp {from { opacity:0;
 	transform: translateY(20px);
@@ -133,7 +139,7 @@ to {
 				</div>
 
 				<!-- Categoría favorita -->
-				<div class="card card-dashboard text-center shadow-sm">
+				<div class="card card-dashboard text-center shadow-sm mb-4">
 					<div class="card-body">
 						<h6 class="card-title-dashboard">⭐ Categoría favorita</h6>
 						<h3 class="card-number-dashboard text-videojuegos">
@@ -143,7 +149,17 @@ to {
 						</small>
 					</div>
 				</div>
-
+				<!-- Saldo Gastado -->
+				<div class="card card-dashboard text-center shadow-sm mb-4">
+					<div class="card-body">
+						<h6 class="card-title-dashboard">💰 Saldo gastado</h6>
+						<h2 class="card-number-dashboard text-saldo">
+							S/.
+							<%=String.format("%.2f", totalAcumulado)%>
+						</h2>
+						<small class="card-subtitle-dashboard">Total en compras</small>
+					</div>
+				</div>
 			</div>
 
 			<!-- ================== COLUMNA DERECHA ================== -->

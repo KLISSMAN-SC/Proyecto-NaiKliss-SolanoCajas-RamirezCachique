@@ -13,6 +13,7 @@ import Beans.Usuario;
 import Model.AmistadModel;
 import Model.BibliotecaModel;
 import Model.PerfilModel;
+import Model.ReporteModel;
 import Model.UsuariosModel;
 
 @WebServlet("/UsuarioController")
@@ -20,7 +21,8 @@ public class UsuarioController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     PerfilModel model = new PerfilModel();
     AmistadModel model2=new AmistadModel();
-    BibliotecaModel model3= new BibliotecaModel();
+    ReporteModel model3= new ReporteModel();
+    BibliotecaModel model4=new BibliotecaModel();
     public UsuarioController() {
         super();
     }
@@ -127,7 +129,7 @@ public class UsuarioController extends HttpServlet {
         	request.setAttribute("usuario", usuario);
         	request.setAttribute("amigos", model3.obtenerCantidadAmigos(idUsuario));
         	request.setAttribute("juegos", model3.obtenercantidadVideojuegos(idUsuario));
-        	request.setAttribute("listarBiblioteca", model3.listarBiblioteca(idUsuario));
+        	request.setAttribute("listarBiblioteca", model4.listarBiblioteca(idUsuario));
         	request.getRequestDispatcher("usuario/perfil.jsp").forward(request, response);
         	
         	
