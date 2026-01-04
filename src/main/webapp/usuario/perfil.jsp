@@ -1,3 +1,4 @@
+<%@page import="java.util.Collections"%>
 <%@page import="Beans.Biblioteca"%>
 <%@page import="java.util.List"%>
 <%@page import="Beans.Usuario"%>
@@ -93,21 +94,47 @@ body {
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
-/* ACTIVIDAD */
-.activity-item {
+/* ESTILO DE TARJETITAS DE JUEGOS */
+.activity-list {
     display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.activity-item-card {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    padding: 12px;
     gap: 15px;
-    padding: 15px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
 }
 
-.activity-item:last-child {
-    border-bottom: none;
+.activity-item-card:hover {
+    transform: translateX(5px);
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
-.activity-item img {
-    width: 120px;
-    border-radius: 8px;
+.game-img {
+    width: 100px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.game-info strong {
+    display: block;
+    font-size: 1.1rem;
+    color: #161917;
+}
+
+.game-info span {
+    font-size: 0.85rem;
+    color: #70160E;
+    font-weight: 600;
 }
 
 /* PANEL DERECHO */
@@ -173,8 +200,7 @@ body {
     int amigos = (int) request.getAttribute("amigos");
     int juegos = (int) request.getAttribute("juegos");
 	%>
-	<!-- ===== HEADER PERFIL ===== -->
-<section class="profile-header">
+	<section class="profile-header">
     <div class="profile-header-inner">
 
         <div class="profile-avatar">
@@ -203,28 +229,26 @@ body {
     </div>
 </section>
 
-<!-- ===== CONTENIDO ===== -->
 <section class="profile-content">
 	<div class="card-box">
     <h4>Juegos comprados recientemente</h4>
-
+    <div class="activity-list">
     <% 
     List<Biblioteca> listarBiblioteca = (List<Biblioteca>) request.getAttribute("listarBiblioteca");
     
     if (listarBiblioteca != null && !listarBiblioteca.isEmpty()) {
-        // Obtenemos el tamaño de la lista para no pasarnos del índice
+    	Collections.reverse(listarBiblioteca);
         int totalJuegos = listarBiblioteca.size();
-        // Usamos un máximo de 2 juegos
-        int limite = Math.min(totalJuegos, 2);
+        int limite = Math.min(totalJuegos, 3);
         
         for (int i = 0; i < limite; i++) {
-            Biblioteca juego = listarBiblioteca.get(i);
+            Biblioteca b = listarBiblioteca.get(i);
     %>
-        <div class="activity-item">
+        <div class="activity-item-card">
             
-            <div>
-                <strong><%= juego.getNombreVideojuego() %></strong>
-                
+            <div class="game-info">
+                <strong><%= b.getNombreVideojuego() %></strong>
+                <span>Registrado en biblioteca</span>
             </div>
         </div>
     <% 
@@ -232,9 +256,9 @@ body {
     } else { %>
         <p class="text-muted">No hay juegos en tu biblioteca aún.</p>
     <% } %>
+    </div>
 </div>
 
-    <!-- PANEL DERECHO -->
     <div>
 
         <div class="card-box side-box">
