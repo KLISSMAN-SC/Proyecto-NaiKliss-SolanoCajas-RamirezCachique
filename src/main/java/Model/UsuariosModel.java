@@ -49,6 +49,10 @@ public class UsuariosModel extends Conexion{
                 usuario.setSaldo(rs.getDouble("saldo"));
                 usuario.setRol(rs.getString("rol"));
                 usuario.setEstado(rs.getString("estado"));
+                usuario.setDescripcion(rs.getString("descripcion"));
+                usuario.setPais(rs.getString("pais"));
+                usuario.setLocalidad(rs.getString("localidad"));
+                usuario.setAvatar(rs.getString("avatar"));
             }
             
             this.cerrarConexion();

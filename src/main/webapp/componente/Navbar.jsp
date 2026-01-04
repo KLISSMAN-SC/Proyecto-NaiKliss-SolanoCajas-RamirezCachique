@@ -1,3 +1,5 @@
+<%@page import="Model.AmistadModel"%>
+<%@page import="Beans.Usuario"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -7,8 +9,10 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <%
+AmistadModel model2=new AmistadModel();
 String url = request.getContextPath();
-String usuario = (String) session.getAttribute("nombreUsuario");
+int id = (int) session.getAttribute("idUsuario");
+Usuario usuario = model2.obtenerUsuarioporId(id);
 String rol = (String) session.getAttribute("rol");
 %>
 
@@ -114,10 +118,10 @@ String rol = (String) session.getAttribute("rol");
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        <%=usuario %>
+                        <%=usuario.getNombreUsuario() %>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="<%=url%>/usuario/perfil.jsp">Perfil</a></li>
+                        <li><a class="dropdown-item" href="<%=url%>/UsuarioController?op=listarPerfil">Perfil</a></li>
                         <li><a class="dropdown-item" href="<%=url%>/usuario/amigos.jsp">Amigos</a></li>
                         <li><a class="dropdown-item" href="<%=url%>/BibliotecaController?op=formularioReportes">Historial</a></li>
                         <li><a class="dropdown-item" href="<%=url%>/RecargaController?op=añadirFondos">Añadir Fondos</a></li>
@@ -133,7 +137,7 @@ String rol = (String) session.getAttribute("rol");
                         OPCIONES
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item">Rol: <%=rol %></a></li>
+                        <li><a class="dropdown-item">Rol: <%=usuario.getRol() %></a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li>
                             <a class="dropdown-item" href="<%=url%>/LoginController?op=logout">

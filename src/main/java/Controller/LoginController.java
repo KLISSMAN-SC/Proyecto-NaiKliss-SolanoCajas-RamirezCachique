@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 
 import Beans.Usuario;
-
+import Model.AmistadModel;
 import Model.UsuariosModel;
 
 @WebServlet("/LoginController")
@@ -18,6 +18,7 @@ public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
 	UsuariosModel modelo = new UsuariosModel();
+	AmistadModel model2=new AmistadModel();
 	
     public LoginController() {
         super();
@@ -107,6 +108,11 @@ public class LoginController extends HttpServlet {
             session.setAttribute("idUsuario", usuario.getId());
             session.setAttribute("fechaCreacion", usuario.getFechaCreacion());
             session.setAttribute("saldo", usuario.getSaldo());
+            session.setAttribute("descripcion", usuario.getDescripcion());
+            session.setAttribute("pais", usuario.getPais());
+            session.setAttribute("localidad", usuario.getLocalidad());
+            session.setAttribute("avatar", usuario.getAvatar());
+            
             
             // Redireccionar al inicio
             response.sendRedirect(request.getContextPath() + "/Inicio.jsp");

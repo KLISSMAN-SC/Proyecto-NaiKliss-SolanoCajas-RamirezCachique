@@ -21,6 +21,7 @@ public class AmistadModel extends Conexion {
 				Amistad a=new Amistad();
 				a.setIdAmigo(rs.getInt("idAmigo"));
 				a.setNombreAmigo(rs.getString("amigo"));
+				a.setAvatar(rs.getString("avatar"));
 				lista.add(a);
 			}
 			this.cerrarConexion();
@@ -115,6 +116,12 @@ public class AmistadModel extends Conexion {
 				 u=new Usuario();
 				u.setId(rs.getInt("ID"));
 				u.setNombreUsuario(rs.getString("nombre"));
+				u.setDescripcion(rs.getString("descripcion"));
+				u.setNombreCompleto(rs.getString("nombreReal"));
+				u.setPais(rs.getString("pais"));
+				u.setLocalidad(rs.getString("localidad"));
+				u.setAvatar(rs.getString("avatar"));
+				u.setRol(rs.getString("rol"));
 			}
 			this.cerrarConexion();
 		} catch (Exception e) {

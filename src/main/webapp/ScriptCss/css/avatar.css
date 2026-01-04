@@ -1,0 +1,240 @@
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+.avatar-page {
+    background: linear-gradient(180deg, #1f2220, #161917);
+    padding: 40px;
+    border-radius: 20px;
+    color: #E1E3DB;
+}
+
+/* =========================
+   TITULOS
+========================= */
+.section-title {
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.section-subtitle {
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   SECCION SUPERIOR
+========================= */
+.avatar-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.avatar-preview {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* =========================
+   AVATAR PRINCIPAL
+========================= */
+.avatar-frame {
+    width: 184px;
+    height: 184px;
+    padding: 6px;
+    background: linear-gradient(135deg, #00c3ff, #ff00cc);
+    border-radius: 10px;
+}
+
+.avatar-frame img {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+}
+
+/* =========================
+   PREVIEW TAMAÑOS
+========================= */
+.avatar-sizes {
+    display: flex;
+    gap: 20px;
+}
+
+.size-box {
+    text-align: center;
+    font-size: 12px;
+}
+
+.size-box img {
+    width: 64px;
+    height: 64px;
+    border-radius: 6px;
+    border: 2px solid #9E0004;
+}
+
+.size-box2 img {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    border: 2px solid #9E0004;
+}
+
+/* =========================
+   SUBIR AVATAR
+========================= */
+.avatar-upload {
+    max-width: 280px;
+}
+
+.avatar-upload p {
+    font-size: 13px;
+    opacity: 0.85;
+    margin-top: 10px;
+}
+
+/* =========================
+   SECCIONES
+========================= */
+.avatar-section {
+    margin-bottom: 40px;
+}
+
+.avatar-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* =========================
+   CAROUSEL AVATARES
+========================= */
+.avatar-carousel {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+/* =========================
+   THUMB AVATAR (CLICK OK)
+========================= */
+.avatar-thumb {
+    min-width: 90px;
+    height: 90px;
+    background-color: #70160E;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+/* 🔥 SOLUCIÓN CLAVE */
+.avatar-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    pointer-events: none; /* permite que el click llegue al div */
+}
+
+/* Hover */
+.avatar-thumb:hover {
+    outline: 3px solid #00c3ff;
+    transform: scale(1.05);
+}
+
+/* =========================
+   FRAMES (SI LOS USAS)
+========================= */
+.frame-thumb {
+    min-width: 110px;
+    height: 110px;
+    border-radius: 8px;
+    border: 3px solid #E1E3DB;
+    cursor: pointer;
+}
+
+.frame-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.frame-thumb.gold {
+    border-color: gold;
+}
+
+.frame-thumb.red {
+    border-color: #B9030F;
+}
+
+.frame-thumb.empty {
+    border-style: dashed;
+    opacity: 0.6;
+}
+
+/* =========================
+   BOTONES
+========================= */
+.btn-secondary {
+    background-color: #70160E;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    color: #E1E3DB;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-link {
+    background: none;
+    border: none;
+    color: #9E0004;
+    font-weight: 600;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* =========================
+   ACCIONES
+========================= */
+.avatar-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.btn-cancel {
+    background-color: #2a2e2c;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 6px;
+    color: #E1E3DB;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #B9030F;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 6px;
+    color: #E1E3DB;
+    font-weight: 700;
+    cursor: pointer;
+}
+.avatar-carousel,
+.avatar-thumb,
+.avatar-thumb img {
+    pointer-events: auto !important;
+    position: relative;
+    z-index: 50;
+}
+.avatar-page::before,
+.avatar-page::after {
+    pointer-events: none !important;
+}
+

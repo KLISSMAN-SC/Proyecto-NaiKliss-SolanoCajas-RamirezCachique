@@ -12,9 +12,13 @@ public class Usuario {
 	private double saldo;
 	private String rol;
 	private String estado;
+	private String descripcion;
+	private String pais;
+	private String localidad;
+	private String avatar;
 	
 	public Usuario(int id, String nombreUsuario, Date fechaCreacion, String password, String nombreCompleto,
-			String email, double saldo, String rol, String estado) {
+			String email, double saldo, String rol, String estado, String descripcion, String pais, String localidad, String avatar) {
 		this.id = id;
 		this.nombreUsuario = nombreUsuario;
 		this.fechaCreacion = fechaCreacion;
@@ -24,6 +28,10 @@ public class Usuario {
 		this.saldo = saldo;
 		this.rol = rol;
 		this.estado = estado;
+		this.descripcion = descripcion;
+		this.pais=pais;
+		this.localidad=localidad;
+		this.avatar=avatar;
 	}
 
 	public Usuario() {
@@ -99,6 +107,38 @@ public class Usuario {
 
 	public void setEstado(String estado) {
 		this.estado = estado;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public String getPais() {
+		return pais;
+	}
+
+	public void setPais(String pais) {
+		this.pais = pais;
+	}
+
+	public String getLocalidad() {
+		return localidad;
+	}
+
+	public void setLocalidad(String localidad) {
+		this.localidad = localidad;
+	}
+
+	public String getAvatar() {
+		return avatar;
+	}
+
+	public void setAvatar(String avatar) {
+		this.avatar = avatar;
 	}
 	
 	

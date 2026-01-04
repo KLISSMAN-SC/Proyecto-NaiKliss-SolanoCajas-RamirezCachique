@@ -1,3 +1,4 @@
+<%@page import="Beans.Usuario"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -122,7 +123,11 @@ body {
 
 </head>
 <body>
+	<%
 
+Usuario usuario = (Usuario) request.getAttribute("usuarios");
+	request.setAttribute("usuarios", usuario);
+%>
 	<!-- NAVBAR (NO TOCADO) -->
 	<jsp:include page="/componente/Navbar.jsp" />
 
