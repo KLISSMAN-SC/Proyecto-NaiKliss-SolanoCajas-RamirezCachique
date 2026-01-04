@@ -1,104 +1,135 @@
- body {
-        background-color: #E1E3DB;
-    }
+body {
+    background-color: #E1E3DB;
+}
 
-    /* CONTENEDOR */
-    .carrito-container {
-        width: 85%;
-        margin: 40px auto;
-        padding: 30px;
-        border-radius: 18px;
-        background: #ffffff;
-        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-    }
+/* CONTENEDOR PRINCIPAL */
+.carrito-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
 
-    /* HEADER */
-    .carrito-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 25px;
-    }
+/* HEADER */
+.carrito-header {
+    margin-bottom: 25px;
+}
 
-    .carrito-title {
-        color: #9E0004;
-        font-weight: 800;
-    }
+.carrito-title {
+    font-weight: 800;
+    color: #9E0004;
+}
 
-    /* SALDO */
-    .saldo-btn {
-        background-color: #ffc107;
-        font-weight: 700;
-        border-radius: 12px;
-        padding: 8px 16px;
-    }
+/* SALDO */
+.saldo-btn {
+    background-color: #161917;
+    color: #E1E3DB;
+    font-weight: 700;
+    border-radius: 12px;
+    padding: 8px 18px;
+}
 
-    /* TABLA */
-    .tabla-scroll {
-        max-height: 300px;
-        overflow-y: auto;
-        border-radius: 14px;
-        box-shadow: inset 0 0 0 1px #dee2e6;
-    }
+.saldo-btn:hover {
+    background-color: #000;
+    color: #fff;
+}
 
-    thead th {
-        position: sticky;
-        top: 0;
-        background-color: #161917;
-        color: #E1E3DB;
-        z-index: 5;
-        text-align: center;
-    }
+/* PASOS */
+.pasos {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
 
-    tbody tr:hover {
-        background-color: rgba(158, 0, 4, 0.08);
-    }
+.paso {
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    border-radius: 14px;
+    font-weight: 600;
+    background-color: #f8f9fa;
+    margin: 0 5px;
+    color: #6c757d;
+}
 
-    /* PRECIO */
-    .precio-gratis {
-        color: #9E0004;
-        font-weight: 700;
-    }
+.paso.activo {
+    background-color: #161917;
+    color: #E1E3DB;
+}
 
-    /* BOTÓN ELIMINAR */
-    .btn-eliminar {
-        background-color: #9E0004;
-        color: #E1E3DB;
-        font-weight: 600;
-        border-radius: 10px;
-        padding: 6px 14px;
-    }
+/* TABLA */
+.tabla-scroll {
+    max-height: 320px;
+    overflow-y: auto;
+    border-radius: 14px;
+    box-shadow: inset 0 0 0 1px #dee2e6;
+    margin-top: 25px;
+}
 
-    .btn-eliminar:hover {
-        background-color: #B9030F;
-        color: #fff;
-    }
+thead th {
+    position: sticky;
+    top: 0;
+    background-color: #161917;
+    color: #E1E3DB;
+    z-index: 5;
+}
 
-    /* TOTALES */
-    .totales {
-        background-color: #f8f9fa;
-        border-radius: 14px;
-        padding: 15px 20px;
-        margin-top: 20px;
-        font-weight: 600;
-    }
+tbody tr:hover {
+    background-color: rgba(158, 0, 4, 0.08);
+}
 
-    /* BOTONES INFERIORES */
-    .btn-seguir {
-        background-color: #6c757d;
-        color: #fff;
-        font-weight: 600;
-        border-radius: 12px;
-    }
+/* PRECIO */
+.precio-gratis {
+    color: #9E0004;
+    font-weight: 700;
+}
 
-    .btn-pago {
-        background-color: #198754;
-        color: #fff;
-        font-weight: 700;
-        border-radius: 12px;
-        padding: 10px 22px;
-    }
+/* BOTÓN ELIMINAR */
+.btn-eliminar {
+    background-color: #9E0004;
+    color: #E1E3DB;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 6px 14px;
+}
 
-    .btn-pago:hover {
-        background-color: #157347;
-    }
+.btn-eliminar:hover {
+    background-color: #B9030F;
+    color: #fff;
+}
+
+/* TOTALES */
+.totales {
+    margin-top: 25px;
+    background-color: #f8f9fa;
+    border-radius: 14px;
+    padding: 18px;
+    font-weight: 700;
+}
+
+/* BOTONES INFERIORES */
+.btn-seguir {
+    background-color: #6c757d;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 12px;
+    padding: 10px 22px;
+}
+
+.btn-seguir:hover {
+    background-color: #5a6268;
+}
+
+.btn-pago {
+    background-color: #161917;
+    color: #E1E3DB;
+    font-weight: 700;
+    border-radius: 12px;
+    padding: 10px 22px;
+}
+
+.btn-pago:hover {
+    background-color: #000;
+}

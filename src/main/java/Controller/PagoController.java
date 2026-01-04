@@ -65,7 +65,12 @@ public class PagoController extends HttpServlet {
 	        	
 	        	session.setAttribute("saldo", saldoNuevo);
 	        	
-	        	listar(request, response);
+	        	 request.setAttribute("precioTotal", precioApagar);
+	        	    request.setAttribute("idUsuario", idUsuario);
+
+	        	   
+	        	    request.getRequestDispatcher("tienda/confirmacion.jsp")
+	        	           .forward(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -95,7 +100,12 @@ public class PagoController extends HttpServlet {
 	    	    modelo.registrarCompra(idUsuario, metodoPago, total);
 	        	modelo.carritoBiblioteca(idUsuario);
 
-	        	listar(request, response);
+	        	request.setAttribute("precioTotal", total);
+        	    request.setAttribute("idUsuario", idUsuario);
+
+        	   
+        	    request.getRequestDispatcher("tienda/confirmacion.jsp")
+ 	           .forward(request, response);
 	    }
 	    
 	    

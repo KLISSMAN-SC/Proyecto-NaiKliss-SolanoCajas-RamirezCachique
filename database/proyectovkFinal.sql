@@ -33,7 +33,7 @@ CREATE TABLE `amistad` (
   KEY `fk_AMISTAD_USUARIO2` (`IdAmigo`),
   CONSTRAINT `fk_AMISTAD_USUARIO1` FOREIGN KEY (`IdUsuario`) REFERENCES `usuario` (`IdUsuario`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_AMISTAD_USUARIO2` FOREIGN KEY (`IdAmigo`) REFERENCES `usuario` (`IdUsuario`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `amistad` (
 
 LOCK TABLES `amistad` WRITE;
 /*!40000 ALTER TABLE `amistad` DISABLE KEYS */;
-INSERT INTO `amistad` VALUES (1,1,2,'ACEPTADO','2025-11-23 22:15:35'),(2,3,2,'ACEPTADO','2025-11-24 12:12:52'),(3,2,1,'ACEPTADO','2025-11-24 13:15:56'),(4,2,3,'ACEPTADO','2025-11-24 13:39:45'),(5,4,2,'ACEPTADO','2025-11-24 13:46:29'),(6,2,4,'ACEPTADO','2025-11-24 22:17:25'),(7,5,2,'ACEPTADO','2025-11-25 00:47:58'),(8,2,5,'ACEPTADO','2025-11-25 00:57:41'),(9,10,2,'ACEPTADO','2025-11-25 01:02:56'),(10,8,2,'ACEPTADO','2025-11-25 01:03:18'),(11,2,10,'ACEPTADO','2025-11-25 01:03:29'),(12,2,8,'ACEPTADO','2025-11-25 01:05:32'),(13,7,2,'ACEPTADO','2025-11-25 01:10:11'),(14,2,7,'ACEPTADO','2025-11-25 01:10:32'),(15,12,2,'RECHAZADO','2025-11-25 01:11:50'),(16,9,2,'ACEPTADO','2025-11-25 08:53:40'),(17,2,9,'ACEPTADO','2025-11-25 08:54:12'),(18,2,15,'PENDIENTE','2025-11-29 20:25:13'),(20,2,6,'PENDIENTE','2025-11-29 20:35:46'),(22,5,1,'ACEPTADO','2025-11-29 20:38:05'),(23,5,3,'PENDIENTE','2025-11-29 20:38:21'),(25,2,13,'PENDIENTE','2025-11-29 20:54:35'),(26,1,5,'ACEPTADO','2025-12-02 14:16:18'),(27,4,1,'ACEPTADO','2025-12-02 14:20:22'),(28,1,4,'ACEPTADO','2025-12-02 14:20:59'),(29,10,5,'ACEPTADO','2025-12-07 12:58:01'),(30,5,10,'ACEPTADO','2025-12-07 12:58:09'),(31,6,5,'ACEPTADO','2025-12-14 10:36:53'),(32,5,6,'ACEPTADO','2025-12-14 10:37:43'),(33,2,14,'PENDIENTE','2025-12-14 11:19:04'),(34,5,7,'PENDIENTE','2025-12-14 11:25:44'),(35,16,1,'PENDIENTE','2025-12-15 14:28:53'),(36,16,2,'RECHAZADO','2025-12-15 14:48:34'),(37,5,16,'ACEPTADO','2025-12-15 15:01:38'),(38,16,5,'ACEPTADO','2025-12-15 15:02:11'),(39,2,16,'ACEPTADO','2025-12-27 17:42:21'),(40,17,2,'ACEPTADO','2026-01-01 20:46:04'),(41,2,17,'ACEPTADO','2026-01-01 20:47:10');
+INSERT INTO `amistad` VALUES (1,1,2,'ACEPTADO','2025-11-23 22:15:35'),(2,3,2,'ACEPTADO','2025-11-24 12:12:52'),(3,2,1,'ACEPTADO','2025-11-24 13:15:56'),(4,2,3,'ACEPTADO','2025-11-24 13:39:45'),(5,4,2,'ACEPTADO','2025-11-24 13:46:29'),(6,2,4,'ACEPTADO','2025-11-24 22:17:25'),(7,5,2,'ACEPTADO','2025-11-25 00:47:58'),(8,2,5,'ACEPTADO','2025-11-25 00:57:41'),(9,10,2,'ACEPTADO','2025-11-25 01:02:56'),(10,8,2,'ACEPTADO','2025-11-25 01:03:18'),(11,2,10,'ACEPTADO','2025-11-25 01:03:29'),(12,2,8,'ACEPTADO','2025-11-25 01:05:32'),(13,7,2,'ACEPTADO','2025-11-25 01:10:11'),(14,2,7,'ACEPTADO','2025-11-25 01:10:32'),(15,12,2,'RECHAZADO','2025-11-25 01:11:50'),(16,9,2,'ACEPTADO','2025-11-25 08:53:40'),(17,2,9,'ACEPTADO','2025-11-25 08:54:12'),(18,2,15,'PENDIENTE','2025-11-29 20:25:13'),(20,2,6,'PENDIENTE','2025-11-29 20:35:46'),(22,5,1,'ACEPTADO','2025-11-29 20:38:05'),(23,5,3,'PENDIENTE','2025-11-29 20:38:21'),(25,2,13,'PENDIENTE','2025-11-29 20:54:35'),(26,1,5,'ACEPTADO','2025-12-02 14:16:18'),(27,4,1,'ACEPTADO','2025-12-02 14:20:22'),(28,1,4,'ACEPTADO','2025-12-02 14:20:59'),(29,10,5,'ACEPTADO','2025-12-07 12:58:01'),(30,5,10,'ACEPTADO','2025-12-07 12:58:09'),(31,6,5,'ACEPTADO','2025-12-14 10:36:53'),(32,5,6,'ACEPTADO','2025-12-14 10:37:43'),(33,2,14,'PENDIENTE','2025-12-14 11:19:04'),(34,5,7,'PENDIENTE','2025-12-14 11:25:44'),(35,16,1,'ACEPTADO','2025-12-15 14:28:53'),(36,16,2,'RECHAZADO','2025-12-15 14:48:34'),(37,5,16,'ACEPTADO','2025-12-15 15:01:38'),(38,16,5,'ACEPTADO','2025-12-15 15:02:11'),(39,2,16,'ACEPTADO','2025-12-27 17:42:21'),(40,17,2,'ACEPTADO','2026-01-01 20:46:04'),(41,2,17,'ACEPTADO','2026-01-01 20:47:10'),(42,1,16,'ACEPTADO','2026-01-04 13:07:16'),(43,18,2,'PENDIENTE','2026-01-04 13:16:22'),(44,18,1,'ACEPTADO','2026-01-04 13:23:58'),(45,1,18,'ACEPTADO','2026-01-04 13:24:11'),(46,1,20,'ACEPTADO','2026-01-04 13:47:50'),(47,20,1,'ACEPTADO','2026-01-04 14:04:01');
 /*!40000 ALTER TABLE `amistad` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -61,7 +61,7 @@ CREATE TABLE `biblioteca` (
   UNIQUE KEY `IdUsuario` (`IdUsuario`),
   KEY `fk_BIBLIOTECA_USUARIO` (`IdUsuario`),
   CONSTRAINT `fk_BIBLIOTECA_USUARIO` FOREIGN KEY (`IdUsuario`) REFERENCES `usuario` (`IdUsuario`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -70,7 +70,7 @@ CREATE TABLE `biblioteca` (
 
 LOCK TABLES `biblioteca` WRITE;
 /*!40000 ALTER TABLE `biblioteca` DISABLE KEYS */;
-INSERT INTO `biblioteca` VALUES (1,1,'2025-11-23 15:05:57'),(2,2,'2025-11-23 15:07:17'),(3,3,'2025-11-24 12:12:22'),(4,4,'2025-11-24 13:45:52'),(5,5,'2025-11-25 00:45:17'),(6,6,'2025-11-25 01:02:42'),(7,7,'2025-11-25 01:02:42'),(8,8,'2025-11-25 01:02:42'),(9,9,'2025-11-25 01:02:42'),(10,10,'2025-11-25 01:02:42'),(11,11,'2025-11-25 01:02:42'),(12,12,'2025-11-25 01:02:42'),(13,13,'2025-11-25 01:02:42'),(14,14,'2025-11-25 01:02:42'),(15,15,'2025-11-25 01:02:42'),(16,16,'2025-12-15 11:33:14'),(17,17,'2026-01-01 20:44:54');
+INSERT INTO `biblioteca` VALUES (1,1,'2025-11-23 15:05:57'),(2,2,'2025-11-23 15:07:17'),(3,3,'2025-11-24 12:12:22'),(4,4,'2025-11-24 13:45:52'),(5,5,'2025-11-25 00:45:17'),(6,6,'2025-11-25 01:02:42'),(7,7,'2025-11-25 01:02:42'),(8,8,'2025-11-25 01:02:42'),(9,9,'2025-11-25 01:02:42'),(10,10,'2025-11-25 01:02:42'),(11,11,'2025-11-25 01:02:42'),(12,12,'2025-11-25 01:02:42'),(13,13,'2025-11-25 01:02:42'),(14,14,'2025-11-25 01:02:42'),(15,15,'2025-11-25 01:02:42'),(16,16,'2025-12-15 11:33:14'),(17,17,'2026-01-01 20:44:54'),(18,18,'2026-01-04 13:16:01'),(19,19,'2026-01-04 13:45:03'),(20,20,'2026-01-04 13:47:22');
 /*!40000 ALTER TABLE `biblioteca` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,7 +89,7 @@ CREATE TABLE `carrito` (
   UNIQUE KEY `IdUsuario` (`IdUsuario`),
   KEY `fk_CARRITO_USUARIO` (`IdUsuario`),
   CONSTRAINT `fk_CARRITO_USUARIO` FOREIGN KEY (`IdUsuario`) REFERENCES `usuario` (`IdUsuario`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -98,7 +98,7 @@ CREATE TABLE `carrito` (
 
 LOCK TABLES `carrito` WRITE;
 /*!40000 ALTER TABLE `carrito` DISABLE KEYS */;
-INSERT INTO `carrito` VALUES (1,1,'2025-11-23 15:05:57'),(2,2,'2025-11-23 15:07:17'),(3,3,'2025-11-24 12:12:22'),(4,4,'2025-11-24 13:45:52'),(5,5,'2025-11-25 00:45:17'),(6,6,'2025-11-25 01:02:42'),(7,7,'2025-11-25 01:02:42'),(8,8,'2025-11-25 01:02:42'),(9,9,'2025-11-25 01:02:42'),(10,10,'2025-11-25 01:02:42'),(11,11,'2025-11-25 01:02:42'),(12,12,'2025-11-25 01:02:42'),(13,13,'2025-11-25 01:02:42'),(14,14,'2025-11-25 01:02:42'),(15,15,'2025-11-25 01:02:42'),(16,16,'2025-12-15 11:33:14'),(17,17,'2026-01-01 20:44:54');
+INSERT INTO `carrito` VALUES (1,1,'2025-11-23 15:05:57'),(2,2,'2025-11-23 15:07:17'),(3,3,'2025-11-24 12:12:22'),(4,4,'2025-11-24 13:45:52'),(5,5,'2025-11-25 00:45:17'),(6,6,'2025-11-25 01:02:42'),(7,7,'2025-11-25 01:02:42'),(8,8,'2025-11-25 01:02:42'),(9,9,'2025-11-25 01:02:42'),(10,10,'2025-11-25 01:02:42'),(11,11,'2025-11-25 01:02:42'),(12,12,'2025-11-25 01:02:42'),(13,13,'2025-11-25 01:02:42'),(14,14,'2025-11-25 01:02:42'),(15,15,'2025-11-25 01:02:42'),(16,16,'2025-12-15 11:33:14'),(17,17,'2026-01-01 20:44:54'),(18,18,'2026-01-04 13:16:01'),(19,19,'2026-01-04 13:45:03'),(20,20,'2026-01-04 13:47:22');
 /*!40000 ALTER TABLE `carrito` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -143,7 +143,7 @@ CREATE TABLE `compra` (
   PRIMARY KEY (`IdCompra`),
   KEY `fk_COMPRA_USUARIO` (`IdUsuario`),
   CONSTRAINT `fk_COMPRA_USUARIO` FOREIGN KEY (`IdUsuario`) REFERENCES `usuario` (`IdUsuario`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -152,7 +152,7 @@ CREATE TABLE `compra` (
 
 LOCK TABLES `compra` WRITE;
 /*!40000 ALTER TABLE `compra` DISABLE KEYS */;
-INSERT INTO `compra` VALUES (1,1,'2025-11-23 16:55:08',342.00,'Billetera'),(2,1,'2025-11-23 17:19:56',228.00,'Billetera'),(3,1,'2025-11-23 17:21:13',152.00,'Billetera'),(4,2,'2025-11-23 17:22:28',0.00,'Billetera'),(5,4,'2025-12-02 14:15:12',0.00,'Billetera'),(6,2,'2025-12-07 19:52:18',152.00,'Billetera'),(7,2,'2025-12-07 19:56:47',152.00,'Billetera'),(8,5,'2025-12-07 21:10:23',100.00,'Tarjeta'),(9,2,'2025-12-08 21:26:28',228.00,'Billetera'),(10,2,'2025-12-14 08:35:22',418.00,'Billetera'),(11,2,'2025-12-14 08:55:31',0.00,'Tarjeta'),(12,2,'2025-12-14 08:56:32',228.00,'Tarjeta'),(13,2,'2025-12-14 08:57:17',152.00,'Tarjeta'),(14,2,'2025-12-14 09:09:02',228.00,'Tarjeta'),(15,2,'2025-12-14 09:15:55',0.00,'Tarjeta'),(16,2,'2025-12-14 09:47:34',0.00,'Tarjeta'),(17,5,'2025-12-14 10:37:26',0.00,'Billetera'),(18,16,'2025-12-15 15:04:18',0.00,'Tarjeta'),(19,16,'2025-12-15 15:04:47',0.00,'Tarjeta'),(20,2,'2025-12-27 17:40:02',114.00,'Tarjeta'),(21,16,'2025-12-29 22:43:11',646.00,'Tarjeta'),(22,2,'2026-01-01 20:43:10',418.00,'Tarjeta');
+INSERT INTO `compra` VALUES (1,1,'2025-11-23 16:55:08',342.00,'Billetera'),(2,1,'2025-11-23 17:19:56',228.00,'Billetera'),(3,1,'2025-11-23 17:21:13',152.00,'Billetera'),(4,2,'2025-11-23 17:22:28',0.00,'Billetera'),(5,4,'2025-12-02 14:15:12',0.00,'Billetera'),(6,2,'2025-12-07 19:52:18',152.00,'Billetera'),(7,2,'2025-12-07 19:56:47',152.00,'Billetera'),(8,5,'2025-12-07 21:10:23',100.00,'Tarjeta'),(9,2,'2025-12-08 21:26:28',228.00,'Billetera'),(10,2,'2025-12-14 08:35:22',418.00,'Billetera'),(11,2,'2025-12-14 08:55:31',0.00,'Tarjeta'),(12,2,'2025-12-14 08:56:32',228.00,'Tarjeta'),(13,2,'2025-12-14 08:57:17',152.00,'Tarjeta'),(14,2,'2025-12-14 09:09:02',228.00,'Tarjeta'),(15,2,'2025-12-14 09:15:55',0.00,'Tarjeta'),(16,2,'2025-12-14 09:47:34',0.00,'Tarjeta'),(17,5,'2025-12-14 10:37:26',0.00,'Billetera'),(18,16,'2025-12-15 15:04:18',0.00,'Tarjeta'),(19,16,'2025-12-15 15:04:47',0.00,'Tarjeta'),(20,2,'2025-12-27 17:40:02',114.00,'Tarjeta'),(21,16,'2025-12-29 22:43:11',646.00,'Tarjeta'),(22,2,'2026-01-01 20:43:10',418.00,'Tarjeta'),(23,18,'2026-01-04 13:21:45',228.00,'Tarjeta'),(24,18,'2026-01-04 13:23:00',228.00,'Tarjeta'),(25,18,'2026-01-04 13:23:22',114.00,'Tarjeta'),(26,1,'2026-01-04 14:53:01',228.00,'Billetera'),(27,1,'2026-01-04 14:59:26',190.00,'Billetera'),(28,1,'2026-01-04 16:51:18',304.00,'Tarjeta'),(29,20,'2026-01-04 17:03:21',0.00,'Tarjeta'),(30,1,'2026-01-04 17:47:31',1064.00,'Tarjeta'),(31,1,'2026-01-04 17:48:04',228.00,'Billetera'),(32,1,'2026-01-04 17:50:10',152.00,'Tarjeta'),(33,1,'2026-01-04 17:53:12',152.00,'Tarjeta'),(34,1,'2026-01-04 17:54:20',228.00,'Tarjeta'),(35,1,'2026-01-04 17:56:01',76.00,'Tarjeta'),(36,1,'2026-01-04 17:57:13',38.00,'Tarjeta');
 /*!40000 ALTER TABLE `compra` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -197,7 +197,7 @@ CREATE TABLE `detalle_biblioteca` (
   KEY `fk_detalle_biblioteca_biblioteca1_idx` (`idBiblioteca`),
   CONSTRAINT `fk_detalle_biblioteca_biblioteca1` FOREIGN KEY (`idBiblioteca`) REFERENCES `biblioteca` (`IdBiblioteca`),
   CONSTRAINT `fk_detalle_biblioteca_videojuego1` FOREIGN KEY (`idVideojuego`) REFERENCES `videojuego` (`idVideojuego`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -206,7 +206,7 @@ CREATE TABLE `detalle_biblioteca` (
 
 LOCK TABLES `detalle_biblioteca` WRITE;
 /*!40000 ALTER TABLE `detalle_biblioteca` DISABLE KEYS */;
-INSERT INTO `detalle_biblioteca` VALUES (1,3,1),(2,8,1),(4,5,1),(5,7,1),(6,1,2),(7,2,2),(9,1,4),(10,2,4),(12,4,2),(13,7,2),(14,5,2),(15,3,2),(16,6,2),(18,19,2),(19,22,2),(20,15,2),(21,11,2),(22,1,16),(23,2,16),(24,8,2),(25,17,16),(26,3,16),(27,22,16),(28,13,2),(29,17,2);
+INSERT INTO `detalle_biblioteca` VALUES (1,3,1),(2,8,1),(4,5,1),(5,7,1),(6,1,2),(7,2,2),(9,1,4),(10,2,4),(12,4,2),(13,7,2),(14,5,2),(15,3,2),(16,6,2),(18,19,2),(19,22,2),(20,15,2),(21,11,2),(22,1,16),(23,2,16),(24,8,2),(25,17,16),(26,3,16),(27,22,16),(28,13,2),(29,17,2),(31,1,18),(32,3,18),(34,5,18),(35,8,18),(36,15,1),(37,25,1),(38,1,1),(39,17,1),(40,11,1),(41,21,1),(42,16,1),(43,2,20),(44,2,1),(45,6,1),(46,18,1),(47,19,1),(48,35,1),(49,36,1),(50,37,1),(51,39,1),(52,38,1),(59,26,1),(60,4,1),(61,34,1),(62,30,1),(63,29,1),(64,41,1);
 /*!40000 ALTER TABLE `detalle_biblioteca` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -226,7 +226,7 @@ CREATE TABLE `detalle_carrito` (
   KEY `fk_DETALLE_CARRITO_VIDEOJUEGO` (`IdVideojuego`),
   CONSTRAINT `fk_DETALLE_CARRITO_CARRITO` FOREIGN KEY (`IdCarrito`) REFERENCES `carrito` (`IdCarrito`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_DETALLE_CARRITO_VIDEOJUEGO` FOREIGN KEY (`IdVideojuego`) REFERENCES `videojuego` (`idVideojuego`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -235,7 +235,7 @@ CREATE TABLE `detalle_carrito` (
 
 LOCK TABLES `detalle_carrito` WRITE;
 /*!40000 ALTER TABLE `detalle_carrito` DISABLE KEYS */;
-INSERT INTO `detalle_carrito` VALUES (43,1,16);
+INSERT INTO `detalle_carrito` VALUES (75,18,2),(77,20,4);
 /*!40000 ALTER TABLE `detalle_carrito` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -256,7 +256,7 @@ CREATE TABLE `detalle_compra` (
   KEY `fk_DETALLE_COMPRA_VIDEOJUEGO` (`IdVideojuego`),
   CONSTRAINT `fk_DETALLE_COMPRA_COMPRA` FOREIGN KEY (`IdCompra`) REFERENCES `compra` (`IdCompra`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_DETALLE_COMPRA_VIDEOJUEGO` FOREIGN KEY (`IdVideojuego`) REFERENCES `videojuego` (`idVideojuego`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -265,7 +265,7 @@ CREATE TABLE `detalle_compra` (
 
 LOCK TABLES `detalle_compra` WRITE;
 /*!40000 ALTER TABLE `detalle_compra` DISABLE KEYS */;
-INSERT INTO `detalle_compra` VALUES (1,1,3,228.00),(2,1,8,114.00),(4,2,5,228.00),(5,3,7,152.00),(6,4,1,0.00),(7,4,2,0.00),(9,5,1,0.00),(10,5,2,0.00),(12,6,4,152.00),(13,7,7,152.00),(14,9,5,228.00),(15,10,3,228.00),(16,10,6,190.00),(18,11,19,0.00),(19,12,22,228.00),(20,13,15,152.00),(21,14,11,228.00),(22,18,1,0.00),(23,19,2,0.00),(24,20,8,114.00),(25,21,17,190.00),(26,21,3,228.00),(27,21,22,228.00),(28,22,13,228.00),(29,22,17,190.00);
+INSERT INTO `detalle_compra` VALUES (1,1,3,228.00),(2,1,8,114.00),(4,2,5,228.00),(5,3,7,152.00),(6,4,1,0.00),(7,4,2,0.00),(9,5,1,0.00),(10,5,2,0.00),(12,6,4,152.00),(13,7,7,152.00),(14,9,5,228.00),(15,10,3,228.00),(16,10,6,190.00),(18,11,19,0.00),(19,12,22,228.00),(20,13,15,152.00),(21,14,11,228.00),(22,18,1,0.00),(23,19,2,0.00),(24,20,8,114.00),(25,21,17,190.00),(26,21,3,228.00),(27,21,22,228.00),(28,22,13,228.00),(29,22,17,190.00),(31,23,1,0.00),(32,23,3,228.00),(34,24,5,228.00),(35,25,8,114.00),(36,26,15,152.00),(37,26,25,76.00),(38,26,1,0.00),(39,27,17,190.00),(40,28,11,228.00),(41,28,21,0.00),(42,28,16,76.00),(43,29,2,0.00),(44,30,2,0.00),(45,30,6,190.00),(46,30,18,152.00),(47,30,19,0.00),(48,30,35,38.00),(49,30,36,152.00),(50,30,37,228.00),(51,30,39,152.00),(52,30,38,152.00),(59,31,26,228.00),(60,32,4,152.00),(61,33,34,152.00),(62,34,30,228.00),(63,35,29,76.00),(64,36,41,38.00);
 /*!40000 ALTER TABLE `detalle_compra` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -286,7 +286,7 @@ CREATE TABLE `tarjeta` (
   PRIMARY KEY (`idTarjeta`),
   KEY `fk_tarjeta_usuario1_idx` (`idUsuario`),
   CONSTRAINT `fk_tarjeta_usuario1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`IdUsuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -295,7 +295,7 @@ CREATE TABLE `tarjeta` (
 
 LOCK TABLES `tarjeta` WRITE;
 /*!40000 ALTER TABLE `tarjeta` DISABLE KEYS */;
-INSERT INTO `tarjeta` VALUES (2,'1515151515151515','carlos adadssd','2/2026','1515',2),(3,'1515151515151515','kiarita uwu','1/2025','1515',16);
+INSERT INTO `tarjeta` VALUES (2,'1515151515151515','carlos adadssd','2/2026','1515',2),(3,'1515151515151515','kiarita uwu','1/2025','1515',16),(4,'6545313846131351515','David Abanto','2/2026','1515',18),(5,'8526459778523688213','klissman solano','5/2028','8213',1),(6,'2333334444444444444','asdsad asdasd','--/----','4444',20);
 /*!40000 ALTER TABLE `tarjeta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -322,7 +322,7 @@ CREATE TABLE `usuario` (
   `pais` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `avatar` varchar(100) DEFAULT 'default.jpg',
   PRIMARY KEY (`IdUsuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -331,7 +331,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'SCKlissman','2025-11-23 20:05:57','65ccd4e3f43819a147c34ffc35420122','Mark Klissman Solano Cajas','msolanocajas@gmail.com',1120.00,'USUARIO','ACTIVO','me gusta el minecraft',NULL,'lima','Perú','avatar5.jpg'),(2,'Naive10','2025-11-23 20:07:17','ccee5504c9d889922b101124e9e43b71','Carlos Andre Ramirez Cachique','tepsulospu@necub.com',225.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'avatar6.jpg'),(3,'max','2025-11-24 17:12:22','d1696816bc1a7afe92f1c8787ac222c3','MaxRios','max@email.com',0.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'default.jpg'),(4,'andre','2025-11-24 18:45:52','dd573120e473c889140e34e817895495','andrevasques','andre@email.com',0.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'default.jpg'),(5,'kiara','2025-11-25 05:45:17','e35bbb75f9cfb5d6bafbc4454c722b02','kira','kra@email.com',15.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'avatar3.jpg'),(6,'jtorres','2025-11-25 06:02:42','32250170a0dca92d53ec9624f336ca24','Juan Torres','juan.torres@example.com',0.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'default.jpg'),(7,'mlopez','2025-11-25 06:02:42','b984fe77863037ddeb9be2ad7dfb246e','María López','maria.lopez@example.com',0.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'default.jpg'),(8,'cgarcia','2025-11-25 06:02:42','2cb42f8734ea607eefed3b70af13bbd3','Carlos García','carlos.garcia@example.com',0.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'default.jpg'),(9,'arodriguez','2025-11-25 06:02:42','fc0eb7dfd906fe6eed8be6a3fb7c4bf7','Ana Rodríguez','ana.rodriguez@example.com',0.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'default.jpg'),(10,'psalinas','2025-11-25 06:02:42','d6b0ab7f1c8ab8f514db9a6d85de160a','Pedro Salinas','pedro.salinas@example.com',0.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'default.jpg'),(11,'kramirez','2025-11-25 06:02:42','aa2a117edb7d2b52611d7b1795f936d3','Karla Ramírez','karla.ramirez@example.com',0.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'default.jpg'),(12,'fjimenez','2025-11-25 06:02:42','5af964bd996a62cb5d04f2b72157d156','Francisco Jiménez','francisco.jimenez@example.com',0.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'default.jpg'),(13,'lquintero','2025-11-25 06:02:42','df3a98fa83e2980ee1f2f233f8bfb8d2','Lucía Quintero','lucia.quintero@example.com',0.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'default.jpg'),(14,'rmedina','2025-11-25 06:02:42','4fa052d6a51f9a5d3f08da7c2e19ac02','Roberto Medina','roberto.medina@example.com',0.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'default.jpg'),(15,'dcastillo','2025-11-25 06:02:42','69116862ec7e59874a9d3de1c9c2f948','Daniela Castillo','daniela.castillo@example.com',0.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'default.jpg'),(16,'Naive','2025-12-15 16:33:14','37038d43fe39c4fb7553bf982e3ff755','CARLOS RAMIREZ','hola@email.com',1000.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'default.jpg'),(17,'Nayu10','2026-01-02 01:44:54','ccee5504c9d889922b101124e9e43b71','BAYUMI GONZALES','nayu@gmail.com',0.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'default.jpg');
+INSERT INTO `usuario` VALUES (1,'SCKlissman','2025-11-23 20:05:57','65ccd4e3f43819a147c34ffc35420122','Mark Klissman Solano Cajas','msolanocajas@gmail.com',474.00,'USUARIO','ACTIVO','hola',NULL,'lima','Perú','avatar3.jpg'),(2,'Naive10','2025-11-23 20:07:17','ccee5504c9d889922b101124e9e43b71','Carlos Andre Ramirez Cachique','tepsulospu@necub.com',225.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'avatar6.jpg'),(3,'max','2025-11-24 17:12:22','d1696816bc1a7afe92f1c8787ac222c3','MaxRios','max@email.com',0.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'default.jpg'),(4,'andre','2025-11-24 18:45:52','dd573120e473c889140e34e817895495','andrevasques','andre@email.com',0.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'default.jpg'),(5,'kiara','2025-11-25 05:45:17','e35bbb75f9cfb5d6bafbc4454c722b02','kira','kra@email.com',15.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'avatar3.jpg'),(6,'jtorres','2025-11-25 06:02:42','32250170a0dca92d53ec9624f336ca24','Juan Torres','juan.torres@example.com',0.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'default.jpg'),(7,'mlopez','2025-11-25 06:02:42','b984fe77863037ddeb9be2ad7dfb246e','María López','maria.lopez@example.com',0.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'default.jpg'),(8,'cgarcia','2025-11-25 06:02:42','2cb42f8734ea607eefed3b70af13bbd3','Carlos García','carlos.garcia@example.com',0.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'default.jpg'),(9,'arodriguez','2025-11-25 06:02:42','fc0eb7dfd906fe6eed8be6a3fb7c4bf7','Ana Rodríguez','ana.rodriguez@example.com',0.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'default.jpg'),(10,'psalinas','2025-11-25 06:02:42','d6b0ab7f1c8ab8f514db9a6d85de160a','Pedro Salinas','pedro.salinas@example.com',0.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'default.jpg'),(11,'kramirez','2025-11-25 06:02:42','aa2a117edb7d2b52611d7b1795f936d3','Karla Ramírez','karla.ramirez@example.com',0.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'default.jpg'),(12,'fjimenez','2025-11-25 06:02:42','5af964bd996a62cb5d04f2b72157d156','Francisco Jiménez','francisco.jimenez@example.com',0.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'default.jpg'),(13,'lquintero','2025-11-25 06:02:42','df3a98fa83e2980ee1f2f233f8bfb8d2','Lucía Quintero','lucia.quintero@example.com',0.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'default.jpg'),(14,'rmedina','2025-11-25 06:02:42','4fa052d6a51f9a5d3f08da7c2e19ac02','Roberto Medina','roberto.medina@example.com',0.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'default.jpg'),(15,'dcastillo','2025-11-25 06:02:42','69116862ec7e59874a9d3de1c9c2f948','Daniela Castillo','daniela.castillo@example.com',0.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'default.jpg'),(16,'Naive','2025-12-15 16:33:14','37038d43fe39c4fb7553bf982e3ff755','CARLOS RAMIREZ','hola@email.com',1000.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'default.jpg'),(17,'Nayu10','2026-01-02 01:44:54','ccee5504c9d889922b101124e9e43b71','BAYUMI GONZALES','nayu@gmail.com',0.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'default.jpg'),(18,'david','2026-01-04 18:16:01','55fc5b709962876903785fd64a6961e5','sdf sdf','david@gmail.com',0.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'default.jpg'),(19,'anthony','2026-01-04 18:45:03','74bf0167beaaf267fc1211dc3b42bb93','anthony sandoval','anthony@gmail.com',0.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'default.jpg'),(20,'usuario1','2026-01-04 18:47:22','0e7af1c75730aa1184fa928dae1bdf8e','asd asd','asd@gmail.com',0.00,'USUARIO','ACTIVO',NULL,NULL,NULL,NULL,'avatar2.jpg');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -353,7 +353,7 @@ CREATE TABLE `usuario_videojuego_estado` (
   KEY `fk_usuario_videojuego_estado_usuario1_idx` (`IdUsuario`),
   CONSTRAINT `fk_usuario_videojuego_estado_usuario1` FOREIGN KEY (`IdUsuario`) REFERENCES `usuario` (`IdUsuario`),
   CONSTRAINT `fk_usuario_videojuego_estado_videojuego1` FOREIGN KEY (`idVideojuego`) REFERENCES `videojuego` (`idVideojuego`)
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -362,7 +362,7 @@ CREATE TABLE `usuario_videojuego_estado` (
 
 LOCK TABLES `usuario_videojuego_estado` WRITE;
 /*!40000 ALTER TABLE `usuario_videojuego_estado` DISABLE KEYS */;
-INSERT INTO `usuario_videojuego_estado` VALUES (1,1,1,'Disponible'),(2,1,2,'Disponible'),(3,1,3,'Biblioteca'),(4,2,2,'Biblioteca'),(5,1,8,'Biblioteca'),(6,2,1,'Biblioteca'),(9,1,5,'Biblioteca'),(10,1,7,'Biblioteca'),(11,2,4,'Biblioteca'),(12,2,5,'Biblioteca'),(13,2,6,'Biblioteca'),(14,4,1,'Biblioteca'),(15,4,2,'Biblioteca'),(16,2,3,'Biblioteca'),(17,2,7,'Biblioteca'),(21,2,19,'Biblioteca'),(22,2,22,'Biblioteca'),(23,2,15,'Biblioteca'),(24,2,11,'Biblioteca'),(25,16,1,'Biblioteca'),(27,16,2,'Biblioteca'),(28,16,3,'Biblioteca'),(29,16,4,'Disponible'),(30,16,5,'Disponible'),(31,16,6,'Disponible'),(32,16,7,'Disponible'),(37,16,17,'Biblioteca'),(39,2,8,'Biblioteca'),(40,16,22,'Biblioteca'),(41,2,13,'Biblioteca'),(42,2,17,'Biblioteca'),(43,1,16,'Carrito');
+INSERT INTO `usuario_videojuego_estado` VALUES (1,1,1,'Biblioteca'),(2,1,2,'Biblioteca'),(3,1,3,'Biblioteca'),(4,2,2,'Biblioteca'),(5,1,8,'Biblioteca'),(6,2,1,'Biblioteca'),(9,1,5,'Biblioteca'),(10,1,7,'Biblioteca'),(11,2,4,'Biblioteca'),(12,2,5,'Biblioteca'),(13,2,6,'Biblioteca'),(14,4,1,'Biblioteca'),(15,4,2,'Biblioteca'),(16,2,3,'Biblioteca'),(17,2,7,'Biblioteca'),(21,2,19,'Biblioteca'),(22,2,22,'Biblioteca'),(23,2,15,'Biblioteca'),(24,2,11,'Biblioteca'),(25,16,1,'Biblioteca'),(27,16,2,'Biblioteca'),(28,16,3,'Biblioteca'),(29,16,4,'Disponible'),(30,16,5,'Disponible'),(31,16,6,'Disponible'),(32,16,7,'Disponible'),(37,16,17,'Biblioteca'),(39,2,8,'Biblioteca'),(40,16,22,'Biblioteca'),(41,2,13,'Biblioteca'),(42,2,17,'Biblioteca'),(43,1,16,'Biblioteca'),(44,1,15,'Biblioteca'),(45,18,1,'Biblioteca'),(46,18,3,'Biblioteca'),(47,18,5,'Biblioteca'),(48,18,8,'Biblioteca'),(49,18,9,'Disponible'),(50,1,25,'Biblioteca'),(52,1,17,'Biblioteca'),(53,1,14,'Disponible'),(54,1,24,'Disponible'),(55,1,11,'Biblioteca'),(56,1,26,'Biblioteca'),(57,1,49,'Disponible'),(58,1,9,'Disponible'),(59,1,22,'Disponible'),(60,1,81,'Disponible'),(63,1,19,'Biblioteca'),(66,1,23,'Disponible'),(67,1,30,'Biblioteca'),(68,1,4,'Biblioteca'),(72,1,21,'Biblioteca'),(75,18,2,'Carrito'),(76,20,2,'Biblioteca'),(77,20,4,'Carrito'),(78,1,13,'Disponible'),(80,1,31,'Disponible'),(82,1,41,'Biblioteca'),(84,1,29,'Biblioteca'),(85,1,38,'Biblioteca'),(86,1,6,'Biblioteca'),(89,1,18,'Biblioteca'),(91,1,35,'Biblioteca'),(92,1,36,'Biblioteca'),(93,1,37,'Biblioteca'),(94,1,39,'Biblioteca'),(98,1,34,'Biblioteca');
 /*!40000 ALTER TABLE `usuario_videojuego_estado` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1195,7 +1195,8 @@ in v_idUsuario int
 BEGIN
 SELECT 
         a.idAmistad as ID,
-        u.nombre_usuario AS Remitente
+        u.nombre_usuario AS Remitente,
+        u.avatar as avatar
     FROM AMISTAD a
     INNER JOIN Usuario u ON a.idUsuario = u.idUsuario
     WHERE a.idAmigo = v_idUsuario
@@ -1561,6 +1562,29 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_saldoAcumulado` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_saldoAcumulado`(
+in v_idUsuario int
+)
+BEGIN
+SELECT
+COALESCE(SUM(c.total), 0) AS TOTAL
+FROM COMPRA c where idUsuario=v_idUsuario;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `sp_videojuegos_por_categoria` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -1601,4 +1625,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-01-04 12:56:40
+-- Dump completed on 2026-01-04 17:57:59

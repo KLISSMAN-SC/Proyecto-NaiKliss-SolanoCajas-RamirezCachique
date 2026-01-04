@@ -31,8 +31,15 @@
         <a href="<%=url%>RecargaController?op=añadirFondos" class="saldo-btn btn">
             Saldo: S/. <%=saldo %>
         </a>
+        <br>
+        <br>
+        <div class="pasos">
+            <div class="paso activo">Carrito</div>
+            <div class="paso">Pago</div>
+            <div class="paso">Confirmación</div>
+     	</div>
     </div>
-
+	
     <!-- TABLA -->
     <div class="tabla-scroll">
         <table class="table table-bordered table-hover align-middle text-center mb-0">

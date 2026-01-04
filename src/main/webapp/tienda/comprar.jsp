@@ -70,7 +70,21 @@
                 Seleccione un método de pago para continuar
             </p>
         </div>
+		<!-- BOTONES INFERIORES -->
+<div class="d-flex justify-content-between mt-4">
 
+    <a href="<%=url%>TiendaController?op=listar"
+       class="btn btn-seguir">
+        ← Volver a la Tienda
+    </a>
+
+    <a href="<%=url%>TiendaController?op=verCarrito"
+       class="btn btn-pago">
+        🛒 Volver al Carrito
+    </a>
+
+</div>
+		
     </div>
 </div>
 
