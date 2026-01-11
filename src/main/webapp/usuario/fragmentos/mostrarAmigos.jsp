@@ -22,8 +22,9 @@ if (lista != null && !lista.isEmpty()) {
 
 	<div class="col">
 
-		<a
-			href="<%=url%>BibliotecaController?op=listarBibliotecaAmigo&nombre=<%=a.getNombreAmigo()%>&idAmigo=<%=a.getIdAmigo()%>"
+		<a	
+			href="<%=url%>UsuarioController?op=listarPerfilAmigo&idAmigo=<%=a.getIdAmigo()%>"
+			
 			class="text-decoration-none">
 
 			<div class="card friend-card h-100">

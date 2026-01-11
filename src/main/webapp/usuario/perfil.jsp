@@ -9,9 +9,11 @@
     Usuario usuario = (Usuario) request.getAttribute("usuario");
     String path = request.getContextPath() + "/img/";
     String avatarActual = usuario.getAvatar();
-    
+    Integer idamigo = (Integer) request.getAttribute("idamigo");
     int amigos = (int) request.getAttribute("amigos");
     int juegos = (int) request.getAttribute("juegos");
+    String destino = (idamigo != null) ? "BibliotecaController?op=listarBibliotecaAmigo&idAmigo="+idamigo+"&nombre="+usuario.getNombreUsuario() : "UsuarioController?op=modificar";
+    String urlFinal = url + destino;
 	%>
 <!DOCTYPE html>
 <html>
@@ -44,9 +46,19 @@
             <span>6</span>
             
         </div>
-		<a href="<%=url%>UsuarioController?op=modificar"
+		<a href="<%=urlFinal%>"
            class="btn-profile">
-            Modificar perfil
+           <%if(idamigo!=null){
+        	   %>
+        	   Mostrar Biblioteca
+        	   <%
+           }else{
+        	   %>
+        	   Modificar perfil
+        	   <%
+        	   }
+           %>
+            
         </a>
         
     </div>

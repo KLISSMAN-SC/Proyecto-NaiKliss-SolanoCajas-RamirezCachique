@@ -47,6 +47,9 @@ public class UsuarioController extends HttpServlet {
 		case "actualizarAvatar":
 			actualizarAvatar(request, response);
 			break;
+		case "listarPerfilAmigo":
+			listarPerfilAmigo(request, response);
+			break;
 		default:
 			listarPerfil(request, response);
 			break;
@@ -113,6 +116,24 @@ public class UsuarioController extends HttpServlet {
         	request.setAttribute("usuario", usuario);
         	
         	request.getRequestDispatcher("usuario/modificarUsuario.jsp").forward(request, response);
+        	
+        	
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    }
+    
+    private void listarPerfilAmigo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+    	try {
+    		response.setContentType("text/html; charset=UTF-8");
+    		int idAmigo=Integer.parseInt(request.getParameter("idAmigo"));
+        	Usuario usuario = model2.obtenerUsuarioporId(idAmigo);
+        	request.setAttribute("idamigo", idAmigo);
+        	request.setAttribute("usuario", usuario);
+        	request.setAttribute("amigos", model3.obtenerCantidadAmigos(idAmigo));
+        	request.setAttribute("juegos", model3.obtenercantidadVideojuegos(idAmigo));
+        	request.setAttribute("listarBiblioteca", model4.listarBiblioteca(idAmigo));
+        	request.getRequestDispatcher("usuario/perfil.jsp").forward(request, response);
         	
         	
 		} catch (Exception e) {
