@@ -50,11 +50,11 @@
            class="btn-profile">
            <%if(idamigo!=null){
         	   %>
-        	   Mostrar Biblioteca.
+        	   Mostrar Biblioteca
         	   <%
            }else{
         	   %>
-        	   Modificar perfil.
+        	   Modificar perfil
         	   <%
         	   }
            %>
