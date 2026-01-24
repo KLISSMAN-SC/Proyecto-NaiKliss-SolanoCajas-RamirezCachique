@@ -48,7 +48,8 @@ public class AmistadController extends HttpServlet {
 		case "buscarPorId":
 		    buscarPorId(request, response);
 		    break;
-
+		
+		    	
 		case "buscarPorNombre":
 		    buscarPorNombre(request, response);
 		    break;
